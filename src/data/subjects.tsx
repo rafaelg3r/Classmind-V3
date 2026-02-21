@@ -1,0 +1,137 @@
+import {
+  BookOpen,
+  FlaskConical,
+  Atom,
+  Beaker,
+  Palette,
+  Dumbbell,
+  Languages,
+  BookText,
+  Feather,
+  Globe,
+  Landmark,
+  PenLine,
+  Calculator,
+  TrendingUp,
+  Scale,
+  Lightbulb,
+} from "lucide-react";
+
+export interface Assessment {
+  date: string;
+  title: string;
+  description: string;
+  points: number;
+}
+
+export interface Subject {
+  name: string;
+  professor: string;
+  icon: React.ReactNode;
+  color: string;
+  assessments: Assessment[];
+}
+
+export const subjectsData: Subject[] = [
+  {
+    name: "Matemática",
+    professor: "Prof. Marcia",
+    icon: <Calculator className="w-5 h-5" />,
+    color: "from-violet-500 to-indigo-600",
+    assessments: [
+      {
+        date: "14/03/2026",
+        title: "Avaliação 1",
+        description: "Primeira avaliação da disciplina de Matemática",
+        points: 10,
+      },
+    ],
+  },
+  {
+    name: "Biologia",
+    professor: "Prof. Josiane",
+    icon: <FlaskConical className="w-5 h-5" />,
+    color: "from-emerald-500 to-teal-600",
+    assessments: [],
+  },
+  {
+    name: "Física",
+    professor: "Prof. Lielei",
+    icon: <Atom className="w-5 h-5" />,
+    color: "from-sky-500 to-blue-600",
+    assessments: [],
+  },
+  {
+    name: "Química",
+    professor: "Prof. Suéli",
+    icon: <Beaker className="w-5 h-5" />,
+    color: "from-amber-500 to-orange-600",
+    assessments: [],
+  },
+  {
+    name: "Filosofia",
+    professor: "Prof. Camilo",
+    icon: <Palette className="w-5 h-5" />,
+    color: "from-yellow-300 to-yellow-500",
+    assessments: [],
+  },
+  {
+    name: "Ed. Física",
+    professor: "Prof. Luís Simão",
+    icon: <Dumbbell className="w-5 h-5" />,
+    color: "from-lime-500 to-green-600",
+    assessments: [],
+  },
+  {
+    name: "Inglês",
+    professor: "Prof. Matheus",
+    icon: <Languages className="w-5 h-5" />,
+    color: "from-cyan-500 to-teal-600",
+    assessments: [],
+  },
+  {
+    name: "Português",
+    professor: "Prof. Isis",
+    icon: <BookText className="w-5 h-5" />,
+    color: "from-fuchsia-500 to-purple-600",
+    assessments: [],
+  },
+  {
+    name: "Literatura",
+    professor: "Prof. Claudia",
+    icon: <BookOpen className="w-5 h-5" />,
+    color: "from-rose-500 to-pink-600",
+    assessments: [],
+  },
+  {
+    name: "Geografia",
+    professor: "Prof. Luís Girardon",
+    icon: <Globe className="w-5 h-5" />,
+    color: "from-teal-500 to-emerald-600",
+    assessments: [],
+  },
+  {
+    name: "História",
+    professor: "Prof. Ariane",
+    icon: <Landmark className="w-5 h-5" />,
+    color: "from-yellow-500 to-amber-600",
+    assessments: [],
+  },
+  {
+    name: "Redação",
+    professor: "Prof. Isis",
+    icon: <PenLine className="w-5 h-5" />,
+    color: "from-indigo-500 to-violet-600",
+    assessments: [],
+  },
+  {
+    name: "Res. de Prob.",
+    professor: "Prof. Marcos",
+    icon: <Calculator className="w-5 h-5" />,
+    color: "from-orange-500 to-red-600",
+    assessments: [],
+  },
+];
+export const getTotalPending = () => {
+  return subjectsData.reduce((acc, s) => acc + s.assessments.length, 0);
+};

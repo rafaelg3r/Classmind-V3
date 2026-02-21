@@ -3,7 +3,7 @@ import { Calendar } from "lucide-react";
 
 export default function PercentageStatus() {
   const totalSchoolDays = 210;
-  const startDay = 49; 
+  const startDay = 49;
 
   const now = new Date();
   const startOfYear = new Date(now.getFullYear(), 0, 0);
@@ -57,7 +57,7 @@ export default function PercentageStatus() {
       <p className="mt-3 text-[10px] text-muted-foreground text-center">
         {daysPassed >= totalSchoolDays
           ? "Ano letivo concluído!"
-          : `Faltam ${totalSchoolDays - daysPassed} dias para o fim.`}
+          : `Faltam ${totalSchoolDays - daysPassed} dias de aula para o fim.`}
       </p>
     </motion.div>
   );

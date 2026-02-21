@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -42,9 +42,22 @@
     --warning: 40 90% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(30, 95%, 55%), hsl(340, 75%, 55%), hsl(250, 60%, 45%));
-    --gradient-card-dark: linear-gradient(135deg, hsl(250, 50%, 25%), hsl(270, 45%, 18%));
-    --gradient-card-accent: linear-gradient(135deg, hsl(250, 60%, 50%), hsl(280, 55%, 40%));
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(30, 95%, 55%),
+      hsl(340, 75%, 55%),
+      hsl(250, 60%, 45%)
+    );
+    --gradient-card-dark: linear-gradient(
+      135deg,
+      hsl(250, 50%, 25%),
+      hsl(270, 45%, 18%)
+    );
+    --gradient-card-accent: linear-gradient(
+      135deg,
+      hsl(250, 60%, 50%),
+      hsl(280, 55%, 40%)
+    );
 
     --glass-bg: hsla(0, 0%, 100%, 0.75);
     --glass-border: hsla(0, 0%, 100%, 0.3);
@@ -98,7 +111,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
   }
 }
 

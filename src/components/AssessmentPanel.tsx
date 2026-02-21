@@ -1,9 +1,11 @@
-import { Home, GraduationCap, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
+import { getTotalPending } from "../data/subjects";
 
 const AssessmentPanel = () => {
-  const avalNum = 0
+  const totalPending = getTotalPending();
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -16,10 +18,10 @@ const AssessmentPanel = () => {
       </h2>
       <div className="rounded-2xl gradient-card-accent p-6 text-primary-foreground relative overflow-hidden">
         <div className="absolute top-4 right-4 text-[80px] font-extrabold leading-none text-primary-foreground/10">
-          {avalNum}
+          {totalPending}
         </div>
         <div className="relative z-10">
-          <p className="text-3xl font-extrabold mb-1">{avalNum}</p>
+          <p className="text-3xl font-extrabold mb-1">{totalPending}</p>
           <p className="text-sm font-semibold text-primary-foreground/80 uppercase tracking-wider">
             Avaliações Pendentes
           </p>
@@ -28,6 +30,7 @@ const AssessmentPanel = () => {
       <motion.button
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
+        onClick={() => navigate("/avaliacoes")}
         className="w-full mt-4 py-4 rounded-2xl bg-foreground text-background font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg"
       >
         Acessar Avaliações

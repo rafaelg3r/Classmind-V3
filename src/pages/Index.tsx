@@ -6,6 +6,7 @@ import TrimesterStatus from "@/components/TrimesterStatus";
 import PercentageStatus from "@/components/PercentageStatus";
 
 const Index = () => {
+
   return (
     <div className="min-h-screen bg-background max-w-[1200px] mx-auto">
       <DashboardHeader />
