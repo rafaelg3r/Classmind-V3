@@ -1,26 +1,36 @@
 import { Clock, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 
+const days = [
+  "Segunda",
+  "Segunda",
+  "Terça",
+  "Quarta",
+  "Quinta",
+  "Sexta",
+  "Segunda",
+];
+
 const fullWeek: Record<number, string[]> = {
-  1: ["Matemática", "Português", "História", "Geografia", "Física"],
-  2: ["Biologia", "Química", "Inglês", "Artes", "Ed. Física"],
+  1: ["Geografia", "Geografia", "Literatura", "Biologia", "Biologia"],
+  2: ["História", "Filosofia", "Filosofia", "Res. Problemas", "Res. Problemas"],
   3: [
-    "Filosofia",
-    "Sociologia",
+    "???",
+    "Física",
+    "Física",
+    "Ed Física",
+    "Ed Física",
     "Matemática",
-    "Português",
-    "História",
-    "Lab. Química",
-    "Lab. Física",
-    "Projeto",
-    "Eletiva",
+    "Matemática",
+    "Química",
+    "Química",
   ],
-  4: ["Geografia", "História", "Matemática", "Português", "Inglês"],
-  5: ["Física", "Química", "Biologia", "Ed. Física", "Sociologia"],
+  4: ["Português", "Res. Problemas", "Res. Problemas", "Inglês", "Inglês"],
+  5: ["Português", "Português", "Geografia", "Matemática", "Matemática"],
 };
 
-const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:10"];
-const eveningHours = ["13:30", "14:20", "15:10", "16:00"];
+const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
+const eveningHours = ["13:30", "14:15", "15:20", "16:15"];
 
 const DailySchedule = () => {
   const currentDay = new Date().getDay();
@@ -46,7 +56,7 @@ const DailySchedule = () => {
       <div className="flex items-center gap-2 mb-4">
         <Clock className="w-5 h-5 text-secondary" />
         <h3 className="text-lg font-bold tracking-tight">
-          Horários de {todayIndex === 3 ? "Quarta (Contraturno)" : "Hoje"}
+          Horários de {todayIndex === 3 ? "Quarta (Contraturno)" : days[currentDay]}
         </h3>
       </div>
       <div className="space-y-2">

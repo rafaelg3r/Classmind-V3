@@ -7,14 +7,10 @@ import {
   Dumbbell,
   Languages,
   BookText,
-  Feather,
   Globe,
   Landmark,
   PenLine,
   Calculator,
-  TrendingUp,
-  Scale,
-  Lightbulb,
 } from "lucide-react";
 
 export interface Assessment {
@@ -38,14 +34,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Marcia",
     icon: <Calculator className="w-5 h-5" />,
     color: "from-violet-500 to-indigo-600",
-    assessments: [
-      {
-        date: "14/03/2026",
-        title: "Avaliação 1",
-        description: "Primeira avaliação da disciplina de Matemática",
-        points: 10,
-      },
-    ],
+    assessments: [],
   },
   {
     name: "Biologia",
