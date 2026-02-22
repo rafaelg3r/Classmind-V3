@@ -12,7 +12,7 @@ import { getTotalPending, subjectsData } from "../data/subjects";
 export default function Avaliacoes() {
   const navigate = useNavigate();
   const [expandedSubject, setExpandedSubject] = useState<string | null>(
-    "Matemática",
+    null,
   );
   const totalPending = getTotalPending();
 
