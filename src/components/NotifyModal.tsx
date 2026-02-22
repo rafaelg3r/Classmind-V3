@@ -6,7 +6,7 @@ export function NotificationModal() {
   const { isNotifyOpen, setIsNotifyOpen } = useInterface();
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isNotifyOpen && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center px-4">
           <motion.div

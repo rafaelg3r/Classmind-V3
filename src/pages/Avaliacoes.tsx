@@ -11,9 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { getTotalPending, subjectsData } from "../data/subjects";
 export default function Avaliacoes() {
   const navigate = useNavigate();
-  const [expandedSubject, setExpandedSubject] = useState<string | null>(
-    null,
-  );
+  const [expandedSubject, setExpandedSubject] = useState<string | null>(null);
   const totalPending = getTotalPending();
 
   return (
@@ -98,7 +96,7 @@ export default function Avaliacoes() {
                 </div>
               </motion.button>
 
-              <AnimatePresence initial={false}>
+              <AnimatePresence initial={false} mode="wait">
                 {isExpanded && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
