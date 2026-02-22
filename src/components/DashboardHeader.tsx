@@ -9,6 +9,9 @@ import gifThursday from "../assets/ThursdayBanner.gif";
 import gifFriday from "../assets/FridayBanner.gif";
 import gifSaturday from "../assets/SaturdayBanner.gif";
 import gifSunday from "../assets/SundayBanner.gif";
+import { useState } from "react";
+
+import { useInterface } from "./InterfaceContext";
 
 const bannerGifs = [
   gifMonday,
@@ -21,6 +24,8 @@ const bannerGifs = [
 ];
 
 export function DashboardHeader() {
+  const { toggleNotify } = useInterface();
+
   const now = new Date();
   const hours = now.getHours();
   const dayOfWeek = now.getDay();
@@ -60,8 +65,12 @@ export function DashboardHeader() {
             ClassMind
           </span>
         </div>
-        <button className="w-10 h-10 rounded-xl bg-card/20 backdrop-blur-sm flex items-center justify-center relative">
+        <button
+          onClick={toggleNotify}
+          className="w-10 h-10 rounded-xl bg-card/20 backdrop-blur-sm flex items-center justify-center relative"
+        >
           <Bell className="w-5 h-5 text-primary-foreground" />
+
           {/* <span className="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-secondary border-2 border-primary-foreground/30" /> */}
         </button>
       </div>
