@@ -1,6 +1,6 @@
 import { Bell, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
-import ClassmindLogo from "../assets/classmindLogo.svg";
+import ClassmindLogo from "/classmindLogo.svg";
 
 export function DashboardHeader() {
   const now = new Date();
