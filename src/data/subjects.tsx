@@ -62,7 +62,14 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Camilo",
     icon: <Palette className="w-5 h-5" />,
     color: "from-yellow-300 to-yellow-500",
-    assessments: [],
+    assessments: [
+      {
+        date: "semana do dia 01/03",
+        title: "Apresentação dos Mitos",
+        description: "Em grupos de 3 - 4 integrantes, apresentar e contar a história do mito escolhido.",
+        points: 1-2,
+      },
+    ],
   },
   {
     name: "Ed. Física",
@@ -97,7 +104,14 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Luís Girardon",
     icon: <Globe className="w-5 h-5" />,
     color: "from-teal-500 to-emerald-600",
-    assessments: [],
+    assessments: [
+      {
+        date: "Indefinido",
+        title: "Pesquisa do Dia Mundial da Água",
+        description: "Deve conter: capa, desenvolvimento, conclusão e referências bibliograficas.",
+        points: 3,
+      }
+    ],
   },
   {
     name: "História",
