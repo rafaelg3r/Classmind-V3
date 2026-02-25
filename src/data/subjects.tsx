@@ -17,7 +17,7 @@ export interface Assessment {
   date: string;
   title: string;
   description: string;
-  points: number;
+  points: string;
 }
 
 export interface Subject {
@@ -67,7 +67,7 @@ export const subjectsData: Subject[] = [
         date: "semana do dia 01/03",
         title: "Apresentação dos Mitos",
         description: "Em grupos de 3 - 4 integrantes, apresentar e contar a história do mito escolhido.",
-        points: 1-2,
+        points: "?",
       },
     ],
   },
@@ -109,7 +109,7 @@ export const subjectsData: Subject[] = [
         date: "Indefinido",
         title: "Pesquisa do Dia Mundial da Água",
         description: "Deve conter: capa, desenvolvimento, conclusão e referências bibliograficas.",
-        points: 3,
+        points: "3",
       }
     ],
   },
