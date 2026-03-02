@@ -28,12 +28,12 @@ const WeekCalendar = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="glass-card rounded-2xl p-5 mx-4 -mt-4 relative z-10 select-none"
+      className="glass-card rounded-2xl px-1 py-2 sm:p-5 mx-4 -mt-4 relative z-10 select-none"
     >
-      <h3 className="text-sm font-semibold text-foreground capitalize mb-4">
+      <h3 className="text-sm  ml-2 sm:ml-0 font-semibold text-foreground capitalize mb-4">
         {month}
       </h3>
-      <div className="flex justify-between gap-3">
+      <div className="flex justify-between gap-1 sm:gap-3">
         {week.map(({ day, date, isToday }) => (
           <div
             key={day}

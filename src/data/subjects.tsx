@@ -121,11 +121,11 @@ export const subjectsData: Subject[] = [
     color: "from-teal-500 to-emerald-600",
     assessments: [
       {
-        date: "Indefinido",
+        date: "13/03",
         title: "Pesquisa do Dia Mundial da Água",
         description:
           "Deve conter: capa, desenvolvimento, conclusão e referências bibliograficas.",
-        points: "3",
+        points: "1 - 3",
       },
     ],
   },
