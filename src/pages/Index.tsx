@@ -9,7 +9,7 @@ import { NotificationModal } from "@/components/NotifyModal";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background max-w-[1200px] mx-auto">
+    <div className="min-h-screen bg-background max-w-[1200px] mx-auto" id="inicio">
       <InterfaceProvider>
         <NotificationModal />
         <DashboardHeader />

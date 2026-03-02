@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterface } from "./InterfaceContext"; // Ajuste o caminho
 import { X } from "lucide-react";
@@ -5,10 +6,23 @@ import { X } from "lucide-react";
 export function NotificationModal() {
   const { isNotifyOpen, setIsNotifyOpen } = useInterface();
 
+  // Bloqueia o scroll
+  useEffect(() => {
+    if (isNotifyOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isNotifyOpen]);
+
   return (
     <AnimatePresence mode="wait">
       {isNotifyOpen && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center px-4">
+        <div className="fixed top-0 left-0 z-[999] flex h-[110dvh] w-full items-center justify-center px-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -19,9 +33,9 @@ export function NotificationModal() {
 
           {/* Div Centralizada */}
           <motion.div
-            initial={{ scale: 0.9, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{ opacity: 0 }}
             className="relative w-full max-w-md glass-card p-8 rounded-3xl shadow-2xl border border-white/10"
           >
             <button
