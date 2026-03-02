@@ -58,18 +58,33 @@ export const subjectsData: Subject[] = [
     assessments: [],
   },
   {
+    name: "Artes",
+    professor: "Prof. Maria Luiza",
+    icon: <Palette className="w-5 h-5" />,
+    color: "from-yellow-600 to-yellow-900",
+    assessments: [],
+  },
+  {
     name: "Filosofia",
     professor: "Prof. Camilo",
     icon: <Palette className="w-5 h-5" />,
     color: "from-yellow-300 to-yellow-500",
     assessments: [
       {
-        date: "semana do dia 01/03",
+        date: "semana do dia 08/03",
         title: "Apresentação dos Mitos",
-        description: "Em grupos de 3 - 4 integrantes, apresentar e contar a história do mito escolhido.",
+        description:
+          "Em grupos de 3 - 4 integrantes, apresentar e contar a história do mito escolhido.",
         points: "?",
       },
     ],
+  },
+  {
+    name: "Sociologia",
+    professor: "Prof. Camilo",
+    icon: <Palette className="w-5 h-5" />,
+    color: "from-amber-200 to-amber-600",
+    assessments: [],
   },
   {
     name: "Ed. Física",
@@ -108,9 +123,10 @@ export const subjectsData: Subject[] = [
       {
         date: "Indefinido",
         title: "Pesquisa do Dia Mundial da Água",
-        description: "Deve conter: capa, desenvolvimento, conclusão e referências bibliograficas.",
+        description:
+          "Deve conter: capa, desenvolvimento, conclusão e referências bibliograficas.",
         points: "3",
-      }
+      },
     ],
   },
   {
