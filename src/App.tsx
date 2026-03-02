@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/next";
 
 import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
@@ -58,7 +57,6 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Analytics />
         <ScrollToTop />
         <AnimatedRoutes />
       </BrowserRouter>
