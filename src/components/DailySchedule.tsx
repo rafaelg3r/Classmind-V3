@@ -2,31 +2,32 @@ import { Clock, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 
 const days = [
-  "Segunda",
+  "Domingo",
   "Segunda",
   "Terça",
   "Quarta",
   "Quinta",
   "Sexta",
-  "Segunda",
+  "Sábado",
 ];
 
 const fullWeek: Record<number, string[]> = {
-  1: ["Geografia", "Geografia", "Literatura", "Biologia", "Biologia"],
-  2: ["História", "Filosofia", "Filosofia", "Res. Problemas", "Res. Problemas"],
+  1: ["Geografia", "Geografia", "Ed. Física", "Biologia", "Biologia"],
+  2: ["Sociologia", "Sociologia", "Física", "Redação", "Redação"],
   3: [
-    "???",
-    "Física",
-    "Física",
-    "Ed Física",
-    "Ed Física",
+    "Res. Problemas",
+    "Ed. Física",
+    "Ed. Física",
+    "Português",
+    "Português",
+    //Contraturno (sempre igual)
     "Matemática",
     "Matemática",
     "Química",
     "Química",
   ],
-  4: ["Português", "Res. Problemas", "Res. Problemas", "Inglês", "Inglês"],
-  5: ["Português", "Português", "Geografia", "Matemática", "Matemática"],
+  4: ["Biologia", "Biologia", "Res. Problemas", "Artes", "Artes"],
+  5: ["Geografia", "Filosofia", "Matemática", "Matemática", "Matemática"],
 };
 
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
@@ -34,7 +35,16 @@ const eveningHours = ["13:30", "14:15", "15:20", "16:15"];
 
 const DailySchedule = () => {
   const currentDay = new Date().getDay();
-  const todayIndex = currentDay === 0 || currentDay === 6 ? 1 : currentDay;
+  const currentHour = new Date().getHours();
+
+  let todayIndex = currentDay;
+
+  if (currentHour >= 12) {
+    todayIndex++;
+  }
+  if (todayIndex === 6 || todayIndex === 7 || todayIndex === 0) {
+    todayIndex = 1;
+  }
 
   const materiasDoDia = fullWeek[todayIndex] || [];
 
@@ -56,7 +66,8 @@ const DailySchedule = () => {
       <div className="flex items-center gap-2 mb-4">
         <Clock className="w-5 h-5 text-secondary" />
         <h3 className="text-lg font-bold tracking-tight">
-          Horários de {todayIndex === 3 ? "Quarta (Contraturno)" : days[currentDay]}
+          Horários de{" "}
+          {todayIndex === 3 ? "Quarta (Contraturno)" : days[todayIndex]}
         </h3>
       </div>
       <div className="space-y-2">
