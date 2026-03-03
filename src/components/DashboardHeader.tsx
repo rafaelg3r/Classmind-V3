@@ -9,7 +9,6 @@ import gifThursday from "../assets/ThursdayBanner.gif";
 import gifFriday from "../assets/FridayBanner.gif";
 import gifSaturday from "../assets/SaturdayBanner.gif";
 import gifSunday from "../assets/SundayBanner.gif";
-import { useState } from "react";
 
 import { useInterface } from "./InterfaceContext";
 
@@ -46,7 +45,7 @@ export function DashboardHeader() {
         className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-500"
         style={{
           backgroundImage: `url(${bannerGifs[dayOfWeek]})`,
-          filter: "brightness(0.6) contrast(1.1)", // Melhora o contraste para o texto
+          filter: "brightness(0.6) contrast(1.1)",
         }}
       />
       <div className="absolute inset-0 gradient-hero opacity-50 "></div>
