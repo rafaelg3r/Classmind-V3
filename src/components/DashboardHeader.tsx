@@ -33,14 +33,8 @@ export function DashboardHeader() {
   const greeting =
     hours < 12 ? "Bom dia" : hours < 18 ? "Boa tarde" : "Boa noite";
 
-  const formattedDate = now.toLocaleDateString("pt-BR", {
-    day: "2-digit",
-    month: "2-digit",
-  });
-  const formattedTime = now.toLocaleTimeString("pt-BR", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+  const diaFormatado = import.meta.env.VITE_BUILD_DATE || "00/00";
+  const horarioFormatado = import.meta.env.VITE_BUILD_TIME || "00:00";
 
   return (
     <motion.header
@@ -84,7 +78,7 @@ export function DashboardHeader() {
         </h1>
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card/20 backdrop-blur-sm">
           <span className="text-xs font-medium text-primary-foreground/90">
-            Última atualização: {formattedDate} às {formattedTime}
+            Última atualização: {diaFormatado} às {horarioFormatado}
           </span>
         </div>
       </motion.div>

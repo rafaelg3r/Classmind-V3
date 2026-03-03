@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:timestamp": "export VITE_BUILD_DATE=$(date +'%d/%m') && export VITE_BUILD_TIME=$(date +'%H:%M') && npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
