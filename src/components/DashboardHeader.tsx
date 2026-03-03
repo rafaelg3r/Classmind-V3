@@ -32,9 +32,6 @@ export function DashboardHeader() {
   const greeting =
     hours < 12 ? "Bom dia" : hours < 18 ? "Boa tarde" : "Boa noite";
 
-  const diaFormatado = import.meta.env.VITE_BUILD_DATE || "00/00";
-  const horarioFormatado = import.meta.env.VITE_BUILD_TIME || "00:00";
-
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -77,7 +74,7 @@ export function DashboardHeader() {
         </h1>
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card/20 backdrop-blur-sm">
           <span className="text-xs font-medium text-primary-foreground/90">
-            Última atualização: {diaFormatado} às {horarioFormatado}
+            Última atualização: 03/03 às 17:12
           </span>
         </div>
       </motion.div>
