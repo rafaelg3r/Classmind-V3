@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterface } from "./InterfaceContext"; // Ajuste o caminho
 import { X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function NotificationModal() {
   const { isNotifyOpen, setIsNotifyOpen } = useInterface();
@@ -33,10 +34,10 @@ export function NotificationModal() {
 
           {/* Div Centralizada */}
           <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative w-full max-w-md glass-card p-8 rounded-3xl shadow-2xl border border-white/10"
+            className="relative w-full max-w-md glass-card p-6 rounded-3xl shadow-2xl border border-white/10"
           >
             <button
               onClick={() => setIsNotifyOpen(false)}
@@ -45,13 +46,17 @@ export function NotificationModal() {
               <X className="w-5 h-5" />
             </button>
 
-            <h2 className="text-2xl font-black text-foreground mb-4 italic">
+            <h2 className="text-2xl font-black text-foreground mb-6 italic">
               Notificações
             </h2>
             <div className="space-y-4">
-              <p className="text-muted-foreground text-sm">
-                Nenhuma nova notificação por enquanto.
-              </p>
+              <Link
+                to="/avaliacoes"
+                className="text-gray-100 p-4 bg-indigo-500 rounded-lg text-md"
+              >
+                Nova avaliação adicionada:{" "}
+                <span className="font-bold text-red-300">Matemática</span>
+              </Link>
             </div>
           </motion.div>
         </div>
