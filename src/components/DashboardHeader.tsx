@@ -61,9 +61,7 @@ export function DashboardHeader() {
         >
           <Bell className="w-5 h-5 text-primary-foreground" />
           {/* notificaçoão bolinha */}
-          <motion.span className="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-red-500 border-2 border-primary-foreground/30" 
-            />
-            
+          <span className="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-red-500 border-2 border-primary-foreground/30" />
         </button>
       </div>
       <motion.div

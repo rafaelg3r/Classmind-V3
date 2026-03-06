@@ -50,12 +50,11 @@ export function NotificationModal() {
               Notificações
             </h2>
             <div className="space-y-4">
-              <Link
-                to="/avaliacoes"
-                className="text-gray-100 p-4 bg-indigo-500 rounded-lg text-md"
-              >
-                Nova avaliação adicionada:{" "}
-                <span className="font-bold text-red-300">Matemática</span>
+              <Link to="/avaliacoes" className="text-gray-100 text-sm  ">
+                <div className="p-4 bg-indigo-500 rounded-lg ">
+                  Nova avaliação adicionada:{" "}
+                  <span className="font-bold text-red-300">Matemática</span>
+                </div>
               </Link>
             </div>
           </motion.div>
