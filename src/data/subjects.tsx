@@ -34,7 +34,14 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Marcia",
     icon: <Calculator className="w-5 h-5" />,
     color: "from-violet-500 to-indigo-600",
-    assessments: [],
+    assessments: [
+      {
+        date: "12/03",
+        title: "Teste sobre Aréas",
+        description: "Questões de geometria plana com foco nas Áreas",
+        points: "2 - 3",
+      },
+    ],
   },
   {
     name: "Biologia",
@@ -71,11 +78,11 @@ export const subjectsData: Subject[] = [
     color: "from-yellow-300 to-yellow-500",
     assessments: [
       {
-        date: "semana do dia 08/03",
+        date: "10/03",
         title: "Apresentação dos Mitos",
         description:
-          "Em grupos de 3 - 4 integrantes, apresentar e contar a história do mito escolhido.",
-        points: "?",
+          "(Copiar no caderno) Apresentar e contar a história do mito escolhido.",
+        points: "1 - 3",
       },
     ],
   },
@@ -125,7 +132,7 @@ export const subjectsData: Subject[] = [
         title: "Pesquisa do Dia Mundial da Água",
         description:
           "Deve conter: capa, desenvolvimento, conclusão e referências bibliograficas.",
-        points: "1 - 3",
+        points: "2 - 3",
       },
     ],
   },
