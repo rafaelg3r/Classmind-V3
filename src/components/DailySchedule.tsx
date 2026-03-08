@@ -12,22 +12,34 @@ const days = [
 ];
 
 const fullWeek: Record<number, string[]> = {
-  1: ["Geografia", "Geografia", "Ed. Física", "Biologia", "Biologia"],
-  2: ["Sociologia", "Sociologia", "Física", "Redação", "Redação"],
-  3: [
+  1: [
+    "Geografia",
+    "Português",
+    "Português",
     "Res. Problemas",
+    "Res. Problemas",
+  ],
+  2: ["História", "Filosofia", "Filosofia", "Redação", "Redação"],
+  3: [
+    "História",
+    "Física",
+    "Física",
     "Ed. Física",
     "Ed. Física",
-    "Português",
-    "Português",
     //Contraturno (sempre igual)
     "Matemática",
     "Matemática",
     "Química",
     "Química",
   ],
-  4: ["Biologia", "Biologia", "Res. Problemas", "Artes", "Artes"],
-  5: ["Geografia", "Filosofia", "Matemática", "Matemática", "Matemática"],
+  4: ["Matemática", "Matemática", "Biologia", "Biologia", "Biologia"],
+  5: [
+    "Res. Problemas",
+    "Res. Problemas",
+    "Português",
+    "Matemática",
+    "Matemática",
+  ],
 };
 
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
