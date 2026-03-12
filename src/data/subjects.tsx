@@ -36,7 +36,7 @@ export const subjectsData: Subject[] = [
     color: "from-violet-500 to-indigo-600",
     assessments: [
       {
-        date: "12/03",
+        date: "13/03",
         title: "Teste sobre Aréas",
         description: "Questões de geometria plana com foco nas Áreas",
         points: "2 - 3",
@@ -78,7 +78,7 @@ export const subjectsData: Subject[] = [
     color: "from-yellow-300 to-yellow-500",
     assessments: [
       {
-        date: "10/03",
+        date: "17/03 (provavelmente)",
         title: "Apresentação dos Mitos",
         description:
           "(Copiar no caderno) Apresentar e contar a história do mito escolhido.",
