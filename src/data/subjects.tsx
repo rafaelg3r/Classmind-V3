@@ -11,6 +11,8 @@ import {
   Landmark,
   PenLine,
   Calculator,
+  Users,
+  Lightbulb,
 } from "lucide-react";
 
 export interface Assessment {
@@ -18,6 +20,7 @@ export interface Assessment {
   title: string;
   description: string;
   points: string;
+  status: "pending" | "done";
 }
 
 export interface Subject {
@@ -39,7 +42,8 @@ export const subjectsData: Subject[] = [
         date: "13/03",
         title: "Teste sobre Aréas",
         description: "Questões de geometria plana com foco nas Áreas",
-        points: "2 - 3",
+        points: "2",
+        status: "done",
       },
     ],
   },
@@ -62,7 +66,16 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Suéli",
     icon: <Beaker className="w-5 h-5" />,
     color: "from-amber-500 to-orange-600",
-    assessments: [],
+    assessments: [
+      {
+        date: "18/03 ",
+        title: "Pesquisa Química Orgânica (caderno)",
+        description:
+          "Pesquisar história, subdivisões, aplicações, importância e diferença entre Orgânica e Inorgânica",
+        points: "1",
+        status: "pending",
+      },
+    ],
   },
   {
     name: "Artes",
@@ -74,22 +87,23 @@ export const subjectsData: Subject[] = [
   {
     name: "Filosofia",
     professor: "Prof. Camilo",
-    icon: <Palette className="w-5 h-5" />,
+    icon: <Lightbulb className="w-5 h-5" />,
     color: "from-yellow-300 to-yellow-500",
     assessments: [
       {
-        date: "17/03 (provavelmente)",
+        date: "24/03 (provavelmente)",
         title: "Apresentação dos Mitos",
         description:
           "(Copiar no caderno) Apresentar e contar a história do mito escolhido.",
         points: "1 - 3",
+        status: "pending",
       },
     ],
   },
   {
     name: "Sociologia",
     professor: "Prof. Camilo",
-    icon: <Palette className="w-5 h-5" />,
+    icon: <Users className="w-5 h-5" />,
     color: "from-amber-200 to-amber-600",
     assessments: [],
   },
@@ -133,6 +147,7 @@ export const subjectsData: Subject[] = [
         description:
           "Deve conter: capa, desenvolvimento, conclusão e referências bibliograficas.",
         points: "2 - 3",
+        status: "done",
       },
     ],
   },
@@ -158,6 +173,14 @@ export const subjectsData: Subject[] = [
     assessments: [],
   },
 ];
+
 export const getTotalPending = () => {
-  return subjectsData.reduce((acc, s) => acc + s.assessments.length, 0);
+  return subjectsData.reduce((total, subject) => {
+    // Filtra apenas as avaliações pendentes e soma ao total
+    const pendingCount = subject.assessments.filter(
+      (assessment) => assessment.status === "pending"
+    ).length;
+    
+    return total + pendingCount;
+  }, 0);
 };

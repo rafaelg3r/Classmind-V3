@@ -61,7 +61,7 @@ export function DashboardHeader() {
         >
           <Bell className="w-5 h-5 text-primary-foreground" />
           {/* notificaçoão bolinha */}
-          <span className="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-red-500 border-2 border-primary-foreground/30" />
+          <span className="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-indigo-500 border-2 border-primary-foreground/30" />
         </button>
       </div>
       <motion.div
@@ -73,8 +73,8 @@ export function DashboardHeader() {
           {greeting}, estudante!
         </h1>
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card/20 backdrop-blur-sm">
-          <span className="text-xs font-medium text-primary-foreground/90">
-            Última atualização: 012/03 às 19:20
+          <span className="text-xs font-medium text-blue-200">
+            Última atualização: 13/03 às 21:12
           </span>
         </div>
       </motion.div>

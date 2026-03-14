@@ -54,6 +54,9 @@ export default function Avaliacoes() {
         {subjectsData.map((subject) => {
           const isExpanded = expandedSubject === subject.name;
           const assessmentCount = subject.assessments.length;
+          const pendingAssessmentsCount = subject.assessments.filter(
+            (assessment) => assessment.status !== "done",
+          ).length;
 
           return (
             <motion.div
@@ -66,7 +69,7 @@ export default function Avaliacoes() {
                 onClick={() =>
                   setExpandedSubject(isExpanded ? null : subject.name)
                 }
-                className="w-full flex items-center gap-3 p-4 text-left"
+                className={`w-full flex items-center gap-3 p-4 text-left `}
               >
                 <div
                   className={`w-11 h-11 rounded-xl bg-gradient-to-br ${subject.color} flex items-center justify-center text-white shrink-0 shadow-lg`}
@@ -82,7 +85,7 @@ export default function Avaliacoes() {
                   </p>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
-                  {assessmentCount > 0 && (
+                  {pendingAssessmentsCount > 0 && (
                     <span className="text-xs font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-full">
                       {assessmentCount}
                     </span>
@@ -120,29 +123,43 @@ export default function Avaliacoes() {
                             initial={{ opacity: 0, y: 8 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="rounded-xl gradient-card-dark p-4 text-primary-foreground"
+                            className={`rounded-xl   p-4 text-primary-foreground ${
+                              assessment.status === "done"
+                                ? "bg-indigo-900/80 "
+                                : "gradient-card-dark"
+                            }`}
                           >
                             <div className="flex items-start justify-between mb-2">
-                              <div className="flex-1 min-w-0">
+                              <div
+                                className={`flex-1 min-w-0 ${assessment.status === "done" ? "opacity-80" : "opacity-100"}`}
+                              >
                                 <p className="font-bold text-sm">
                                   {assessment.title}
                                 </p>
-                                <p className="text-xs text-primary-foreground/60 mt-0.5 line-clamp-2">
+                                <p className="text-xs text-primary-foreground/60 mt-0.5">
                                   {assessment.description}
                                 </p>
                               </div>
-                              <div className="flex items-center gap-1 shrink-0 ml-3 bg-white/10 rounded-lg px-2.5 py-1.5">
-                                <Trophy className="w-3.5 h-3.5 text-secondary" />
-                                <span className="text-sm font-extrabold">
+                            </div>
+                            <div
+                              className={`flex items-center justify-between mt-3 ${assessment.status === "done" ? "opacity-80" : "opacity-100"} `}
+                            >
+                              <div className="flex items-center gap-1.5">
+                                <Calendar className="w-3.5 h-3.5 text-primary-foreground/50" />
+                                <span className="text-xs text-primary-foreground/60 font-medium">
+                                  {assessment.date}
+                                </span>
+                              </div>
+                              <div
+                                className={`flex items-center gap-1 shrink-0 ml-3 rounded-lg px-2.5 py-1.5 bg-white/10 ${assessment.status === "done" ? "opacity-80" : "opacity-100"} `}
+                              >
+                                <Trophy
+                                  className={`w-3.5 h-3.5 text-secondary`}
+                                />
+                                <span className="text-sm font-extrabold ">
                                   {assessment.points} pts
                                 </span>
                               </div>
-                            </div>
-                            <div className="flex items-center gap-1.5 mt-3">
-                              <Calendar className="w-3.5 h-3.5 text-primary-foreground/50" />
-                              <span className="text-xs text-primary-foreground/60 font-medium">
-                                {assessment.date}
-                              </span>
                             </div>
                           </motion.div>
                         ))
