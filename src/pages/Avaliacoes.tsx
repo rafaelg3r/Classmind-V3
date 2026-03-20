@@ -6,6 +6,8 @@ import {
   Calendar,
   Trophy,
   GraduationCap,
+  Check,
+  Clock,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { getTotalPending, subjectsData } from "../data/subjects";
@@ -125,13 +127,13 @@ export default function Avaliacoes() {
                             transition={{ delay: idx * 0.05 }}
                             className={`rounded-xl   p-4 text-primary-foreground ${
                               assessment.status === "done"
-                                ? "bg-indigo-900/80 "
+                                ? "bg-gray-500 "
                                 : "gradient-card-dark"
                             }`}
                           >
                             <div className="flex items-start justify-between mb-2">
                               <div
-                                className={`flex-1 min-w-0 ${assessment.status === "done" ? "opacity-80" : "opacity-100"}`}
+                                className={`flex-1 min-w-0 ${assessment.status === "done" ? "opacity-60 " : "opacity-100"}`}
                               >
                                 <p className="font-bold text-sm">
                                   {assessment.title}
@@ -140,6 +142,7 @@ export default function Avaliacoes() {
                                   {assessment.description}
                                 </p>
                               </div>
+                              
                             </div>
                             <div
                               className={`flex items-center justify-between mt-3 ${assessment.status === "done" ? "opacity-80" : "opacity-100"} `}
@@ -161,6 +164,20 @@ export default function Avaliacoes() {
                                 </span>
                               </div>
                             </div>
+                              <div className="mt-3">
+                                {assessment.status === "done" && (
+                                  <div className="rounded-full py-1.5 px-2.5 bg-gray-900 flex items-center justify-center gap-4">
+                                    <p className="text-xs">Finalizado</p>
+                                    <Check className="w-5 h-5 text-secondary" />
+                                  </div>
+                                )}
+                                {assessment.status === "pending" && (
+                                  <div className="rounded-full py-1.5 px-2.5 bg-gray-100/10 flex items-center justify-center gap-4">
+                                    <p className="text-xs">Pendente</p>
+                                    <Clock className="w-5 h-5 text-secondary" />
+                                  </div>
+                                )}
+                              </div>
                           </motion.div>
                         ))
                       )}

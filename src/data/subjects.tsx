@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 export interface Assessment {
+  type: "trabalho" | "tema" | "prova";
   date: string;
   title: string;
   description: string;
@@ -39,6 +40,7 @@ export const subjectsData: Subject[] = [
     color: "from-violet-500 to-indigo-600",
     assessments: [
       {
+        type: "trabalho",
         date: "13/03",
         title: "Teste sobre Aréas",
         description: "Questões de geometria plana com foco nas Áreas",
@@ -68,12 +70,22 @@ export const subjectsData: Subject[] = [
     color: "from-amber-500 to-orange-600",
     assessments: [
       {
+        type: "trabalho",
+        date: "01/04 ",
+        title: "Trabalho em Grupo (jujubas)",
+        description:
+          "Trabalho com  gomas e palitos de dente em grupos de 3 a 4 pessoas",
+        points: "2",
+        status: "pending",
+      },
+      {
+        type: "trabalho",
         date: "18/03 ",
         title: "Pesquisa Química Orgânica (caderno)",
         description:
           "Pesquisar história, subdivisões, aplicações, importância e diferença entre Orgânica e Inorgânica",
         points: "1",
-        status: "pending",
+        status: "done",
       },
     ],
   },
@@ -82,7 +94,17 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Maria Luiza",
     icon: <Palette className="w-5 h-5" />,
     color: "from-yellow-600 to-yellow-900",
-    assessments: [],
+    assessments: [
+      {
+        type: "trabalho",
+        date: "sem data",
+        title: "Desenho seguindo um dos gêneros artísticos",
+        description:
+          "Fazer um desenho entre uma das opções: histórico, de gênero (cotidiano), retrato, paisagem, natureza-morta, abstração ou nu artístico",
+        points: "?",
+        status: "pending",
+      },
+    ],
   },
   {
     name: "Filosofia",
@@ -91,6 +113,7 @@ export const subjectsData: Subject[] = [
     color: "from-yellow-300 to-yellow-500",
     assessments: [
       {
+        type: "trabalho",
         date: "24/03 (provavelmente)",
         title: "Apresentação dos Mitos",
         description:
@@ -142,6 +165,7 @@ export const subjectsData: Subject[] = [
     color: "from-teal-500 to-emerald-600",
     assessments: [
       {
+        type: "trabalho",
         date: "13/03",
         title: "Pesquisa do Dia Mundial da Água",
         description:
@@ -178,9 +202,9 @@ export const getTotalPending = () => {
   return subjectsData.reduce((total, subject) => {
     // Filtra apenas as avaliações pendentes e soma ao total
     const pendingCount = subject.assessments.filter(
-      (assessment) => assessment.status === "pending"
+      (assessment) => assessment.status === "pending",
     ).length;
-    
+
     return total + pendingCount;
   }, 0);
 };
