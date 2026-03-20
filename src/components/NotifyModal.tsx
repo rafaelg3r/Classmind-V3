@@ -52,8 +52,8 @@ export function NotificationModal() {
             <div className="space-y-4">
               <Link to="/avaliacoes" className="text-gray-100 text-sm  ">
                 <div className="p-4 bg-indigo-500 rounded-lg ">
-                  Nova avaliação adicionada:{" "}
-                  <span className="font-bold text-red-300">Química</span>
+                  Ultima avaliação adicionada:{" "}
+                  <span className="font-bold text-amber-700">Artes</span>
                 </div>
               </Link>
             </div>

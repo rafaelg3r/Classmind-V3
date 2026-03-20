@@ -13,9 +13,9 @@ const days = [
 
 const fullWeek: Record<number, string[]> = {
   1: ["Geografia", "Português", "Português", "Biologia", "Biologia"],
-  2: ["Física", "Sociologia", "Sociologia", "Redação", "Redação"],
+  2: ["História", "Filosofia", "Filosofia", "Redação", "Redação"],
   3: [
-    "Res. Problemas",
+    "História",
     "Física",
     "Física",
     "Ed. Física",
@@ -26,8 +26,8 @@ const fullWeek: Record<number, string[]> = {
     "Química",
     "Química",
   ],
-  4: ["Português", "Matemática", "Literatura", "Artes", "Artes"],
-  5: ["Português", "Português", "Português", "Matemática", "Matemática"],
+  4: ["Literatura", "Matemática", "Matemática", "Inglês", "Inglês"],
+  5: ["Res. Problemas", "Res. Problemas", "Português", "Matemática", "Matemática"],
 };
 
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
