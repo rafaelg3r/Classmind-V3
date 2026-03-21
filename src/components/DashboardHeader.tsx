@@ -45,7 +45,7 @@ export function DashboardHeader() {
           filter: "brightness(0.6) contrast(1.1)",
         }}
       />
-      <div className="absolute inset-0 gradient-hero opacity-50 "></div>
+      <div className="absolute inset-0 bg-indigo-600/40  "></div>
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-xl bg-card/20 backdrop-blur-sm flex items-center justify-center">
@@ -61,7 +61,7 @@ export function DashboardHeader() {
         >
           <Bell className="w-5 h-5 text-primary-foreground" />
           {/* notificaçoão bolinha */}
-          <span className="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-indigo-500 border-2 border-primary-foreground/30" />
+          <span className="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-orange-400 border-2 border-primary-foreground/30" />
         </button>
       </div>
       <motion.div

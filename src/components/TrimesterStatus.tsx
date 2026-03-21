@@ -1,4 +1,4 @@
-import {Clock, Lock } from "lucide-react";
+import { Clock, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 
 const trimesters = [
@@ -35,7 +35,6 @@ const statusColors = {
 };
 
 export default function TrimesterStatus() {
-  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -55,7 +54,7 @@ export default function TrimesterStatus() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8 + i * 0.1 }}
-              className={`rounded-2xl p-4 ${variantStyles[t.variant]} ${
+              className={`rounded-[6px] p-4 ${variantStyles[t.variant]} ${
                 i === 0 ? "col-span-2" : ""
               }`}
             >

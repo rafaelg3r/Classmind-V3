@@ -19,7 +19,7 @@ export default function Avaliacoes() {
   return (
     <div className="min-h-screen bg-background max-w-[1200px] mx-auto pb-8">
       {/* Header */}
-      <div className="gradient-hero p-6 pb-8 rounded-b-3xl relative overflow-hidden">
+      <div className="gradient-card-dark p-6 pb-8 rounded-b-3xl relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10">
           <div className="flex items-center justify-between mb-6">
@@ -64,7 +64,7 @@ export default function Avaliacoes() {
             <motion.div
               key={subject.name}
               layout
-              className="rounded-2xl overflow-hidden glass-card"
+              className="rounded-[6px] overflow-hidden glass-card"
             >
               <motion.button
                 layout="position"
@@ -87,8 +87,10 @@ export default function Avaliacoes() {
                   </p>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
-                  {pendingAssessmentsCount > 0 && (
-                    <span className="text-xs font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-full">
+                  {assessmentCount > 0 && (
+                    <span
+                      className={`text-xs font-bold  px-2.5 py-1 rounded-full ${pendingAssessmentsCount > 0 ? "bg-rose-500/20 text-rose-500" : "bg-emerald-500/20  text-emerald-500"}`}
+                    >
                       {assessmentCount}
                     </span>
                   )}
@@ -125,59 +127,64 @@ export default function Avaliacoes() {
                             initial={{ opacity: 0, y: 8 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className={`rounded-xl   p-4 text-primary-foreground ${
+                            className={`rounded-[8px]  p-4 text-primary-foreground ${
                               assessment.status === "done"
-                                ? "bg-gray-500 "
-                                : "gradient-card-dark"
+                                ? "bg-emerald-900/80"
+                                : assessment.type === "prova"
+                                  ? "bg-[#3b090a]"
+                                  : "card-dark"
                             }`}
                           >
                             <div className="flex items-start justify-between mb-2">
-                              <div
-                                className={`flex-1 min-w-0 ${assessment.status === "done" ? "opacity-60 " : "opacity-100"}`}
-                              >
-                                <p className="font-bold text-sm">
+                              <div className="flex-1 min-w-0 ">
+                                <p
+                                  className={`font-bold text-sm ${assessment.type === "prova" ? "text-[#eb424d]" : "text-white"}`}
+                                >
                                   {assessment.title}
                                 </p>
                                 <p className="text-xs text-primary-foreground/60 mt-0.5">
                                   {assessment.description}
                                 </p>
                               </div>
-                              
                             </div>
                             <div
-                              className={`flex items-center justify-between mt-3 ${assessment.status === "done" ? "opacity-80" : "opacity-100"} `}
+                              className={`flex items-center justify-between mt-3 `}
                             >
                               <div className="flex items-center gap-1.5">
                                 <Calendar className="w-3.5 h-3.5 text-primary-foreground/50" />
-                                <span className="text-xs text-primary-foreground/60 font-medium">
+                                <span className="text-xs text-primary-foreground/70 font-medium">
                                   {assessment.date}
                                 </span>
                               </div>
                               <div
-                                className={`flex items-center gap-1 shrink-0 ml-3 rounded-lg px-2.5 py-1.5 bg-white/10 ${assessment.status === "done" ? "opacity-80" : "opacity-100"} `}
+                                className={`flex items-center gap-1 shrink-0 ml-3 rounded-lg px-2.5 py-1.5 ${assessment.status === "done" ? "bg-emerald-900/90" : "bg-white/10 "} `}
                               >
                                 <Trophy
-                                  className={`w-3.5 h-3.5 text-secondary`}
+                                  className={`w-3.5 h-3.5 text-secondary ${assessment.status === "done" ? "text-emerald-300" : "text-secondary"}`}
                                 />
                                 <span className="text-sm font-extrabold ">
                                   {assessment.points} pts
                                 </span>
                               </div>
                             </div>
-                              <div className="mt-3">
-                                {assessment.status === "done" && (
-                                  <div className="rounded-full py-1.5 px-2.5 bg-gray-900 flex items-center justify-center gap-4">
-                                    <p className="text-xs">Finalizado</p>
-                                    <Check className="w-5 h-5 text-secondary" />
-                                  </div>
-                                )}
-                                {assessment.status === "pending" && (
-                                  <div className="rounded-full py-1.5 px-2.5 bg-gray-100/10 flex items-center justify-center gap-4">
-                                    <p className="text-xs">Pendente</p>
-                                    <Clock className="w-5 h-5 text-secondary" />
-                                  </div>
-                                )}
-                              </div>
+                            <div className="mt-3">
+                              {assessment.status === "done" && (
+                                <div className="rounded-full py-1.5 px-2.5 bg-emerald-900/90 flex items-center justify-center gap-4 ">
+                                  <p className="text-xs font-medium text-emerald-200">
+                                    Finalizado
+                                  </p>
+                                  <Check className="w-5 h-5 text-emerald-300" />
+                                </div>
+                              )}
+                              {assessment.status === "pending" && (
+                                <div className="rounded-full py-1.5 px-2.5 bg-gray-100/10 flex items-center justify-center gap-4">
+                                  <p className="text-xs font-medium">
+                                    Pendente
+                                  </p>
+                                  <Clock className="w-5 h-5 text-secondary" />
+                                </div>
+                              )}
+                            </div>
                           </motion.div>
                         ))
                       )}

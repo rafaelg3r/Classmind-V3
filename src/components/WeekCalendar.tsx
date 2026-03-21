@@ -28,7 +28,7 @@ const WeekCalendar = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="glass-card rounded-2xl px-1 py-2 sm:p-5 mx-4 -mt-4 relative z-10 select-none"
+      className="glass-card rounded-[6px] px-1 py-2 sm:p-5 mx-4 -mt-4 relative z-10 select-none"
     >
       <h3 className="text-sm  ml-2 sm:ml-0 font-semibold text-foreground capitalize mb-4">
         {month}
@@ -44,7 +44,9 @@ const WeekCalendar = () => {
             }`}
           >
             <span className="text-[10px] font-semibold uppercase">{day}</span>
-            <span className={`text-sm font-bold ${isToday ? "" : "text-foreground"}`}>
+            <span
+              className={`text-sm font-bold ${isToday ? "" : "text-foreground"}`}
+            >
               {date}
             </span>
           </div>

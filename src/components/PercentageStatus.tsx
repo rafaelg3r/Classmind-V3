@@ -21,7 +21,7 @@ export default function PercentageStatus() {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.2 }}
-      className="mx-4 mt-4 p-5 rounded-2xl glass-card relative overflow-hidden"
+      className="mx-4 mt-4 p-5 rounded-[6px] glass-card relative overflow-hidden"
     >
       <div className="flex justify-between items-end mb-4">
         <div>
@@ -50,7 +50,7 @@ export default function PercentageStatus() {
           initial={{ width: 0 }}
           animate={{ width: `${percentage}%` }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="h-full bg-gradient-to-r from-primary to-secondary"
+          className="h-full bg-gradient-to-r from-orange-600 to-orange-400"
         />
       </div>
 

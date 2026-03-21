@@ -37,7 +37,7 @@ export function NotificationModal() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative w-full max-w-md glass-card p-6 rounded-3xl shadow-2xl border border-white/10"
+            className="relative w-full max-w-md glass-card p-6 rounded-[6px] shadow-2xl border border-white/10"
           >
             <button
               onClick={() => setIsNotifyOpen(false)}
@@ -50,12 +50,15 @@ export function NotificationModal() {
               Notificações
             </h2>
             <div className="space-y-4">
-              <Link to="/avaliacoes" className="text-gray-100 text-sm  ">
+              {/* <Link to="/avaliacoes" className="text-gray-100 text-sm  ">
                 <div className="p-4 bg-indigo-500 rounded-lg ">
                   Ultima avaliação adicionada:{" "}
                   <span className="font-bold text-amber-700">Artes</span>
                 </div>
-              </Link>
+              </Link> */}
+              <div className="p-4 bg-gradient-to-r from-indigo-700 to-indigo-500  rounded-[6px] ">
+                <span className=" text-white">Interface atualizada!</span>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -42,7 +42,7 @@ export const subjectsData: Subject[] = [
       {
         type: "trabalho",
         date: "13/03",
-        title: "Teste sobre Aréas",
+        title: "Teste Geometria Plana",
         description: "Questões de geometria plana com foco nas Áreas",
         points: "2",
         status: "done",
@@ -54,7 +54,17 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Josiane",
     icon: <FlaskConical className="w-5 h-5" />,
     color: "from-emerald-500 to-teal-600",
-    assessments: [],
+    assessments: [
+      {
+        type: "trabalho",
+        date: "05/03",
+        title: "Atividade sobre Hereditariedade",
+        description:
+          "Completar a tabela com as informações e criar um 'filho' com características hereditárias",
+        points: "1",
+        status: "done",
+      },
+    ],
   },
   {
     name: "Física",
@@ -114,7 +124,7 @@ export const subjectsData: Subject[] = [
     assessments: [
       {
         type: "trabalho",
-        date: "24/03 (provavelmente)",
+        date: "24/03",
         title: "Apresentação dos Mitos",
         description:
           "(Copiar no caderno) Apresentar e contar a história do mito escolhido.",
@@ -135,7 +145,14 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Luís Simão",
     icon: <Dumbbell className="w-5 h-5" />,
     color: "from-lime-500 to-green-600",
-    assessments: [],
+    assessments: [{
+      type: "trabalho",
+        date: "04/03",
+        title: "Prova prática de handebol",
+        description: "Efetuar o percurso com arremosos em trios",
+        points: "1",
+        status: "done",
+    }],
   },
   {
     name: "Inglês",
@@ -170,7 +187,7 @@ export const subjectsData: Subject[] = [
         title: "Pesquisa do Dia Mundial da Água",
         description:
           "Deve conter: capa, desenvolvimento, conclusão e referências bibliograficas.",
-        points: "2 - 3",
+        points: "3",
         status: "done",
       },
     ],

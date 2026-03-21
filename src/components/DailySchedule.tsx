@@ -27,7 +27,13 @@ const fullWeek: Record<number, string[]> = {
     "Química",
   ],
   4: ["Literatura", "Matemática", "Matemática", "Inglês", "Inglês"],
-  5: ["Res. Problemas", "Res. Problemas", "Português", "Matemática", "Matemática"],
+  5: [
+    "Res. Problemas",
+    "Res. Problemas",
+    "Português",
+    "Matemática",
+    "Matemática",
+  ],
 };
 
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
@@ -61,7 +67,7 @@ const DailySchedule = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4 }}
-      className="mx-4 mt-4 rounded-2xl gradient-card-dark p-5 text-primary-foreground overflow-hidden relative"
+      className="mx-4 mt-4 rounded-[6px] card-dark p-5 text-primary-foreground overflow-hidden relative"
     >
       <div className="flex items-center gap-2 mb-4">
         <Clock className="w-5 h-5 text-secondary" />
@@ -77,7 +83,7 @@ const DailySchedule = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 + i * 0.05 }}
-            className="flex items-center gap-3 px-3 py-2 rounded-xl bg-primary-foreground/10 backdrop-blur-sm"
+            className="flex items-center gap-3 px-3 py-2 rounded-[6px] bg-primary-foreground/10 backdrop-blur-sm"
           >
             <span className="text-sm font-bold text-secondary min-w-[45px]">
               {item.time}
