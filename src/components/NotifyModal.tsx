@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterface } from "./InterfaceContext"; // Ajuste o caminho
-import { X } from "lucide-react";
+import { ChevronRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function NotificationModal() {
@@ -49,7 +49,7 @@ export function NotificationModal() {
             <h2 className="text-2xl font-black text-foreground mb-6 italic">
               Notificações
             </h2>
-            <div className="space-y-4">
+            <div className="flex flex-col gap-3">
               {/* <Link to="/avaliacoes" className="text-gray-100 text-sm  ">
                 <div className="p-4 bg-indigo-500 rounded-lg ">
                   Ultima avaliação adicionada:{" "}
@@ -59,6 +59,17 @@ export function NotificationModal() {
               <div className="p-4 bg-gradient-to-r from-indigo-700 to-indigo-500  rounded-[6px] ">
                 <span className=" text-white">Interface atualizada!</span>
               </div>
+              <Link to="/avaliacoes" className="text-gray-100 text-sm">
+                <div className="flex items-center justify-between p-4 bg-gradient-to-r from-indigo-700 to-indigo-500  rounded-[6px] ">
+                  <div className="flex flex-col gap-1">
+                    <span className=" text-white">Proxima avaliação:</span>
+                    <strong className="text-secondary">
+                      Terça-feira (24) | Filosofia
+                    </strong>
+                  </div>
+                  <ChevronRight className="w-6 h-6 mr-3" />
+                </div>
+              </Link>
             </div>
           </motion.div>
         </div>
