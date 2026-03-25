@@ -129,7 +129,7 @@ export const subjectsData: Subject[] = [
         description:
           "(Copiar no caderno) Apresentar e contar a história do mito escolhido.",
         points: "1 - 3",
-        status: "pending",
+        status: "done",
       },
     ],
   },
@@ -145,14 +145,16 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Luís Simão",
     icon: <Dumbbell className="w-5 h-5" />,
     color: "from-lime-500 to-green-600",
-    assessments: [{
-      type: "trabalho",
+    assessments: [
+      {
+        type: "trabalho",
         date: "04/03",
         title: "Prova prática de handebol",
         description: "Efetuar o percurso com arremosos em trios",
         points: "1",
         status: "done",
-    }],
+      },
+    ],
   },
   {
     name: "Inglês",
@@ -166,7 +168,17 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Isis",
     icon: <BookText className="w-5 h-5" />,
     color: "from-fuchsia-500 to-purple-600",
-    assessments: [],
+    assessments: [
+      {
+        type: "trabalho",
+        date: "30/03 - 03/04",
+        title: "Teste sobre tipos de sujeito",
+        description:
+          "Questões avaliativas sobre os diversos tipos de sujeito (simples, composto, oculto, inexistente, etc.)",
+        points: "?",
+        status: "pending",
+      },
+    ],
   },
   {
     name: "Literatura",

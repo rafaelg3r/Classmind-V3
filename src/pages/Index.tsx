@@ -6,15 +6,18 @@ import TrimesterStatus from "@/components/TrimesterStatus";
 import PercentageStatus from "@/components/PercentageStatus";
 import { InterfaceProvider } from "@/components/InterfaceContext";
 import { NotificationModal } from "@/components/NotifyModal";
+import Dashboard from "@/components/Dashboard";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background max-w-[1200px] mx-auto" id="inicio">
+    <div
+      className="min-h-screen bg-background max-w-[1200px] mx-auto"
+      id="inicio"
+    >
       <InterfaceProvider>
         <NotificationModal />
         <DashboardHeader />
-        <WeekCalendar />
-        <DailySchedule />
+        <Dashboard />
         <AssessmentPanel />
         <TrimesterStatus />
         <PercentageStatus />

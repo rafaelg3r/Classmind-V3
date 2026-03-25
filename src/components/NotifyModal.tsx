@@ -50,26 +50,12 @@ export function NotificationModal() {
               Notificações
             </h2>
             <div className="flex flex-col gap-3">
-              {/* <Link to="/avaliacoes" className="text-gray-100 text-sm  ">
-                <div className="p-4 bg-indigo-500 rounded-lg ">
-                  Ultima avaliação adicionada:{" "}
-                  <span className="font-bold text-amber-700">Artes</span>
-                </div>
-              </Link> */}
-              <div className="p-4 bg-gradient-to-r from-indigo-700 to-indigo-500  rounded-[6px] ">
-                <span className=" text-white">Interface atualizada!</span>
+              <div className="p-4 bg-indigo-500 rounded-lg ">
+                <span className="text-gray-200 text-sm leading-none">
+                  Nova funcionalidade disponivel! agora é possivel ver o horário
+                  dos outros dias clicando neles
+                </span>
               </div>
-              <Link to="/avaliacoes" className="text-gray-100 text-sm">
-                <div className="flex items-center justify-between p-4 bg-gradient-to-r from-indigo-700 to-indigo-500  rounded-[6px] ">
-                  <div className="flex flex-col gap-1">
-                    <span className=" text-white">Proxima avaliação:</span>
-                    <strong className="text-secondary">
-                      Terça-feira (24) | Filosofia
-                    </strong>
-                  </div>
-                  <ChevronRight className="w-6 h-6 mr-3" />
-                </div>
-              </Link>
             </div>
           </motion.div>
         </div>

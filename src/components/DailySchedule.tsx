@@ -1,6 +1,10 @@
 import { Clock, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 
+interface DailyScheduleProps {
+  selectedDay: number;
+}
+
 const days = [
   "Domingo",
   "Segunda",
@@ -39,23 +43,12 @@ const fullWeek: Record<number, string[]> = {
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
 const eveningHours = ["13:30", "14:15", "15:20", "16:15"];
 
-const DailySchedule = () => {
-  const currentDay = new Date().getDay();
-  const currentHour = new Date().getHours();
+const DailySchedule = ({ selectedDay }: DailyScheduleProps) => {
+  const displayDay = selectedDay === 0 || selectedDay === 6 ? 1 : selectedDay;
 
-  let todayIndex = currentDay;
-
-  if (currentHour >= 12) {
-    todayIndex++;
-  }
-  if (todayIndex === 6 || todayIndex === 7 || todayIndex === 0) {
-    todayIndex = 1;
-  }
-
-  const materiasDoDia = fullWeek[todayIndex] || [];
-
+  const materiasDoDia = fullWeek[displayDay] || [];
   const labelsHorarios =
-    todayIndex === 3 ? [...morningHours, ...eveningHours] : morningHours;
+    displayDay === 3 ? [...morningHours, ...eveningHours] : morningHours;
 
   const scheduleItems = labelsHorarios.map((time, index) => ({
     time,
@@ -64,6 +57,7 @@ const DailySchedule = () => {
 
   return (
     <motion.div
+      key={displayDay}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4 }}
@@ -73,9 +67,14 @@ const DailySchedule = () => {
         <Clock className="w-5 h-5 text-secondary" />
         <h3 className="text-lg font-bold tracking-tight">
           Horários de{" "}
-          {todayIndex === 3 ? "Quarta (Contraturno)" : days[todayIndex]}
+          {displayDay === 3 ? "Quarta (Contraturno)" : days[displayDay]}
         </h3>
       </div>
+      {selectedDay === 0 || selectedDay === 6 ? (
+        <div className="text-sm text-secondary mb-3 italic">
+          Exibindo horários de segunda-feira. Bom final de semana!
+        </div>
+      ) : null}
       <div className="space-y-2">
         {scheduleItems.map((item, i) => (
           <motion.div
