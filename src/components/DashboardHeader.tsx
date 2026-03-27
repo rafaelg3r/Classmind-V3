@@ -74,7 +74,7 @@ export function DashboardHeader() {
         </h1>
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card/20 backdrop-blur-sm">
           <span className="text-xs font-medium text-blue-200">
-            Última atualização: 26/03 às 23:54
+            Última atualização: 27/03 às 18:30
           </span>
         </div>
       </motion.div>
