@@ -39,7 +39,7 @@ const fullWeek: Record<number, string[]> = {
     "Matemática",
   ],
 };
-
+let semanaSeguinte = false;
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
 const eveningHours = ["13:30", "14:15", "15:20", "16:15"];
 
@@ -52,7 +52,7 @@ const DailySchedule = ({ selectedDay }: DailyScheduleProps) => {
 
   const scheduleItems = labelsHorarios.map((time, index) => ({
     time,
-    subject: materiasDoDia[index] || "Janela/Livre",
+    subject: materiasDoDia[index] || "Indefinido",
   }));
 
   return (
@@ -88,7 +88,9 @@ const DailySchedule = ({ selectedDay }: DailyScheduleProps) => {
               {item.time}
             </span>
             <span className="text-sm font-medium text-primary-foreground/90">
-              {item.subject}
+              {selectedDay === 0 && !semanaSeguinte|| selectedDay === 6 && !semanaSeguinte
+                ? "indefinido"
+                :  item.subject}
             </span>
           </motion.div>
         ))}

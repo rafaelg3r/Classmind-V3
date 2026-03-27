@@ -71,7 +71,17 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Lielei",
     icon: <Atom className="w-5 h-5" />,
     color: "from-sky-500 to-blue-600",
-    assessments: [],
+    assessments: [
+      {
+        type: "trabalho",
+        date: "30/03 - 03/04 ",
+        title: "Teste (todo conteúdo passado)",
+        description:
+          "Teste avaliativo com todas o conteúdo passado até o momento.",
+        points: "2",
+        status: "pending",
+      },
+    ],
   },
   {
     name: "Química",
@@ -128,7 +138,7 @@ export const subjectsData: Subject[] = [
         title: "Apresentação dos Mitos",
         description:
           "(Copiar no caderno) Apresentar e contar a história do mito escolhido.",
-        points: "1 - 3",
+        points: "2",
         status: "done",
       },
     ],
@@ -185,7 +195,17 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Claudia",
     icon: <BookOpen className="w-5 h-5" />,
     color: "from-rose-500 to-pink-600",
-    assessments: [],
+    assessments: [
+      {
+        type: "trabalho",
+        date: "17/04",
+        title: "Video-resenha avaliativo",
+        description:
+          "Produzir uma video-resenha crítica sobre um autor do Pré-modernismo Brasileiro (mais informações no classroom)",
+        points: "2",
+        status: "pending",
+      },
+    ],
   },
   {
     name: "Geografia",
