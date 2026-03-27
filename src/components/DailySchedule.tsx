@@ -16,10 +16,10 @@ const days = [
 ];
 
 const fullWeek: Record<number, string[]> = {
-  1: ["Geografia", "Português", "Português", "Biologia", "Biologia"],
-  2: ["História", "Filosofia", "Filosofia", "Redação", "Redação"],
+  1: ["Sociologia", "Geografia", "Português", "Biologia", "Biologia"],
+  2: ["Redação", "Inglês", "Sociologia", "Res. Problemas", "Res. Problemas"],
   3: [
-    "História",
+    "Física",
     "Física",
     "Física",
     "Ed. Física",
@@ -30,16 +30,10 @@ const fullWeek: Record<number, string[]> = {
     "Química",
     "Química",
   ],
-  4: ["Literatura", "Matemática", "Matemática", "Inglês", "Inglês"],
-  5: [
-    "Res. Problemas",
-    "Res. Problemas",
-    "Português",
-    "Matemática",
-    "Matemática",
-  ],
+  4: ["Português", "Biologia", "Biologia", "Artes", "Artes"],
+  5: ["Feriado", "Feriado", "Feriado", "Feriado", "Feriado"],
 };
-let semanaSeguinte = false;
+let semanaSeguinte = true;
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
 const eveningHours = ["13:30", "14:15", "15:20", "16:15"];
 
@@ -88,9 +82,10 @@ const DailySchedule = ({ selectedDay }: DailyScheduleProps) => {
               {item.time}
             </span>
             <span className="text-sm font-medium text-primary-foreground/90">
-              {selectedDay === 0 && !semanaSeguinte|| selectedDay === 6 && !semanaSeguinte
+              {(selectedDay === 0 && !semanaSeguinte) ||
+              (selectedDay === 6 && !semanaSeguinte)
                 ? "indefinido"
-                :  item.subject}
+                : item.subject}
             </span>
           </motion.div>
         ))}
