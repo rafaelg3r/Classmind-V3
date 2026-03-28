@@ -21,7 +21,7 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
         day,
         date: date.getDate(),
         isToday: i === dayOfWeek,
-        dayIndex: i, // Precisamos do index (0-6) para o onClick
+        dayIndex: i,
       };
     });
   };
