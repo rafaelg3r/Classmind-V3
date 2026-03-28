@@ -81,7 +81,7 @@ export const subjectsData: Subject[] = [
         date: "01/04 ",
         title: "Teste (todo conteúdo passado)",
         description:
-          "Teste avaliativo com todas o conteúdo passado até o momento.",
+          "Teste avaliativo com todos os conteúdos passados até o momento (foco em fórmulas).",
         points: "2",
         status: "pending",
       },
