@@ -1,16 +1,19 @@
 import { motion } from "framer-motion";
-
+import { getAssessmentsDates, getAssessmentsTypes } from "../data/subjects";
 interface WeekCalendarProps {
   selectedDay: number;
   onSelectDay: (dayIndex: number) => void;
 }
 
+// console.log(getAssessmentsDates());
 const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
   const today = new Date();
   const dayOfWeek = today.getDay();
 
   const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
+  const assessmentDates = getAssessmentsDates();
+  const assessmentTypes = getAssessmentsTypes();
   const getWeekDates = () => {
     const startOfWeek = new Date(today);
     startOfWeek.setDate(today.getDate() - dayOfWeek);
@@ -20,11 +23,13 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
       return {
         day,
         date: date.getDate(),
+        month: date.getMonth() + 1,
         isToday: i === dayOfWeek,
         dayIndex: i,
       };
     });
   };
+  // console.log(weekNumericDays);
 
   const month = today.toLocaleDateString("pt-BR", {
     month: "long",
@@ -44,14 +49,17 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
         {month}
       </h3>
       <div className="flex justify-between gap-1 sm:gap-3">
-        {week.map(({ day, date, isToday, dayIndex }) => {
+        {week.map(({ day, date, month: dayMonth, isToday, dayIndex }) => {
           const isSelected = selectedDay === dayIndex;
-
+          
+          const hasAssessment = assessmentDates.some(
+            (a) => a.day === date && a.month === dayMonth,
+          );
           return (
             <div
               key={day}
               onClick={() => onSelectDay(dayIndex)}
-              className={`flex flex-col items-center gap-1 w-full px-2 py-2 rounded-xl transition-all cursor-pointer ${
+              className={`flex flex-col relative items-center gap-1 w-full px-2 py-2 rounded-xl transition-all cursor-pointer ${
                 isSelected
                   ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
                   : isToday
@@ -59,6 +67,9 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
                     : "text-muted-foreground hover:bg-muted"
               }`}
             >
+              {hasAssessment && (
+                 <span className={`absolute top-0 right-0 w-1.5 h-1.5 rounded-full bg-yellow-400`} />
+              )}
               <span className="text-[10px] font-semibold uppercase">{day}</span>
               <span
                 className={`text-sm font-bold ${
@@ -67,6 +78,7 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
               >
                 {date}
               </span>
+              
             </div>
           );
         })}

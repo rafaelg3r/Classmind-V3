@@ -192,7 +192,7 @@ export const subjectsData: Subject[] = [
     assessments: [
       {
         type: "trabalho",
-        date: "30/03 - 03/04",
+        date: "02/04???",
         title: "Teste sobre tipos de sujeito",
         description:
           "Questões avaliativas sobre os diversos tipos de sujeito (simples, composto, oculto, inexistente, etc.)",
@@ -308,7 +308,22 @@ export const subjectsData: Subject[] = [
     ],
   },
 ];
-
+export const getAssessmentsDates = () => {
+  return subjectsData
+    .flatMap((subject) => subject.assessments)
+    .map((assessment) => {
+      const parts = assessment.date.trim().split("/");
+      const day = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10);
+      return { day, month };
+    })
+    .filter((d) => !isNaN(d.day) && !isNaN(d.month)); // filtra datas tipo "fim de abril"
+};
+export const getAssessmentsTypes = () => {
+  return subjectsData
+    .flatMap((subject) => subject.assessments)
+    .map((assessment) => assessment.type);
+}
 export const getTotalPending = () => {
   return subjectsData.reduce((total, subject) => {
     // Filtra apenas as avaliações pendentes e soma ao total

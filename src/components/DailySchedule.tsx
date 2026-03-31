@@ -1,8 +1,9 @@
 import { Clock, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
-
+import { subjectsData } from "../data/subjects";
 interface DailyScheduleProps {
   selectedDay: number;
+  selectedDate: Date;
 }
 
 const days = [
@@ -33,9 +34,25 @@ const fullWeek: Record<number, string[]> = {
   4: ["Português", "Biologia", "Biologia", "Artes", "Artes"],
   5: ["Feriado", "Feriado", "Feriado", "Feriado", "Feriado"],
 };
-let semanaSeguinte = true;
+let semanaSeguinte = false;
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
 const eveningHours = ["13:30", "14:15", "15:20", "16:15"];
+
+const assessments = subjectsData.flatMap((subject) => subject.assessments);
+const getAssessmentsForSubjectOnDate = (subjectName: string, date: Date) => {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+
+  const subject = subjectsData.find((s) => s.name === subjectName);
+  if (!subject) return [];
+
+  return subject.assessments.filter((a) => {
+    const parts = a.date.trim().split("/");
+    const aDay = parseInt(parts[0], 10);
+    const aMonth = parseInt(parts[1], 10);
+    return aDay === day && aMonth === month;
+  });
+};
 
 const DailySchedule = ({ selectedDay }: DailyScheduleProps) => {
   const displayDay = selectedDay === 0 || selectedDay === 6 ? 1 : selectedDay;
@@ -87,6 +104,15 @@ const DailySchedule = ({ selectedDay }: DailyScheduleProps) => {
                 ? "indefinido"
                 : item.subject}
             </span>
+             {/* {assessments.map((a, idx) => (
+                <span
+                  key={idx}
+                  title={a.title}
+                  className="flex items-center justify-center w-5 h-5 rounded-full bg-yellow-400 text-[10px] font-bold text-yellow-900 shadow-sm shadow-yellow-300 shrink-0"
+                >
+                  {a.points === "?" ? "?" : a.points}
+                </span>
+              ))} */}
           </motion.div>
         ))}
       </div>
