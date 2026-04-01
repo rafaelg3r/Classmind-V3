@@ -38,7 +38,6 @@ let semanaSeguinte = false;
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
 const eveningHours = ["13:30", "14:15", "15:20", "16:15"];
 
-const assessments = subjectsData.flatMap((subject) => subject.assessments);
 const getAssessmentsForSubjectOnDate = (subjectName: string, date: Date) => {
   const day = date.getDate();
   const month = date.getMonth() + 1;
@@ -54,7 +53,7 @@ const getAssessmentsForSubjectOnDate = (subjectName: string, date: Date) => {
   });
 };
 
-const DailySchedule = ({ selectedDay }: DailyScheduleProps) => {
+const DailySchedule = ({ selectedDay, selectedDate }: DailyScheduleProps) => {
   const displayDay = selectedDay === 0 || selectedDay === 6 ? 1 : selectedDay;
 
   const materiasDoDia = fullWeek[displayDay] || [];
@@ -87,34 +86,38 @@ const DailySchedule = ({ selectedDay }: DailyScheduleProps) => {
         </div>
       ) : null}
       <div className="space-y-2">
-        {scheduleItems.map((item, i) => (
-          <motion.div
-            key={item.time}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 + i * 0.05 }}
-            className="flex items-center gap-3 px-3 py-2 rounded-[6px] bg-primary-foreground/10 backdrop-blur-sm"
-          >
-            <span className="text-sm font-bold text-secondary min-w-[45px]">
-              {item.time}
-            </span>
-            <span className="text-sm font-medium text-primary-foreground/90">
-              {(selectedDay === 0 && !semanaSeguinte) ||
-              (selectedDay === 6 && !semanaSeguinte)
-                ? "indefinido"
-                : item.subject}
-            </span>
-             {/* {assessments.map((a, idx) => (
-                <span
-                  key={idx}
-                  title={a.title}
-                  className="flex items-center justify-center w-5 h-5 rounded-full bg-yellow-400 text-[10px] font-bold text-yellow-900 shadow-sm shadow-yellow-300 shrink-0"
-                >
-                  {a.points === "?" ? "?" : a.points}
-                </span>
-              ))} */}
-          </motion.div>
-        ))}
+        {scheduleItems.map((item, i) => {
+          const assessments = getAssessmentsForSubjectOnDate(
+            item.subject,
+            selectedDate,
+          );
+          const pendingAssessments = assessments.some(
+            (a) => a.status === "pending",
+          );
+          return (
+            <motion.div
+              key={item.time}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 + i * 0.05 }}
+              className={`flex items-center gap-3 px-3 py-2 rounded-[6px] backdrop-blur-sm transition-colors ${
+                pendingAssessments
+                  ? "bg-yellow-400/20 border border-yellow-400/40"
+                  : "bg-primary-foreground/10"
+              }`}
+            >
+              <span className="text-sm font-bold text-secondary min-w-[45px]">
+                {item.time}
+              </span>
+              <span className="text-sm font-medium text-primary-foreground/90">
+                {(selectedDay === 0 && !semanaSeguinte) ||
+                (selectedDay === 6 && !semanaSeguinte)
+                  ? "indefinido"
+                  : item.subject}
+              </span>
+            </motion.div>
+          );
+        })}
       </div>
     </motion.div>
   );

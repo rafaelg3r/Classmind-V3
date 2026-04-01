@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { getAssessmentsDates, getAssessmentsTypes } from "../data/subjects";
 interface WeekCalendarProps {
   selectedDay: number;
+  selectedDate: Date
   onSelectDay: (dayIndex: number) => void;
 }
 

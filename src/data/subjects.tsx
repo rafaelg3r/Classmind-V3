@@ -192,7 +192,7 @@ export const subjectsData: Subject[] = [
     assessments: [
       {
         type: "trabalho",
-        date: "02/04???",
+        date: "06/04 - 10/04",
         title: "Teste sobre tipos de sujeito",
         description:
           "Questões avaliativas sobre os diversos tipos de sujeito (simples, composto, oculto, inexistente, etc.)",

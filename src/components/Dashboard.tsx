@@ -8,6 +8,15 @@ const currentHour = new Date().getHours();
 
 let initialDay = currentDay;
 
+const getDateForDayIndex = (dayIndex: number): Date => {
+  const today = new Date();
+  const startOfWeek = new Date(today);
+  startOfWeek.setDate(today.getDate() - today.getDay());
+  const d = new Date(startOfWeek);
+  d.setDate(startOfWeek.getDate() + dayIndex);
+  return d;
+};
+
 const Dashboard = () => {
   const getInitialDay = () => {
     if (currentHour >= 12) {
@@ -24,9 +33,16 @@ const Dashboard = () => {
   const [selectedDay, setSelectedDay] = useState<number>(getInitialDay());
 
   const [isTutorialOpen, setIsTutorialOpen] = useState(true);
+
+  const selectedDate = getDateForDayIndex(selectedDay);
+
   return (
     <div className="flex flex-col ">
-      <WeekCalendar selectedDay={selectedDay} onSelectDay={setSelectedDay} />
+      <WeekCalendar
+        selectedDate={selectedDate}
+        selectedDay={selectedDay}
+        onSelectDay={setSelectedDay}
+      />
       {selectedDay === initialDay && isTutorialOpen === true && (
         <button
           className="flex items-center justify-center rounded-[6px] px-1 py-2 sm:p-5 mx-4 mt-2 -mb-2 border border-indigo-400 bg-violet-200/70"
@@ -40,7 +56,7 @@ const Dashboard = () => {
           </h3>
         </button>
       )}
-      <DailySchedule selectedDay={selectedDay} />
+      <DailySchedule selectedDay={selectedDay} selectedDate={selectedDate} />
     </div>
   );
 };
