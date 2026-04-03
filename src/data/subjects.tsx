@@ -78,7 +78,7 @@ export const subjectsData: Subject[] = [
     assessments: [
       {
         type: "trabalho",
-        date: "01/04 ",
+        date: "08/04??",
         title: "Teste (todo conteúdo passado)",
         description:
           "Teste avaliativo com todos os conteúdos passados até o momento (foco em fórmulas).",
@@ -101,7 +101,7 @@ export const subjectsData: Subject[] = [
         description:
           "Trabalho com  gomas e palitos de dente em grupos de 3 a 4 pessoas",
         points: "2",
-        status: "pending",
+        status: "done",
       },
       {
         type: "trabalho",
@@ -121,15 +121,15 @@ export const subjectsData: Subject[] = [
     color: "from-yellow-600 to-yellow-900",
     trimester: 1,
     assessments: [
-      {
-        type: "trabalho",
-        date: "02/04",
-        title: "Desenho seguindo um dos gêneros artísticos",
-        description:
-          "Fazer um desenho entre uma das opções: histórico, de gênero (cotidiano), retrato, paisagem, natureza-morta, abstração ou nu artístico",
-        points: "?",
-        status: "pending",
-      },
+      // {
+      //   type: "trabalho",
+      //   date: "02/04",
+      //   title: "Desenho seguindo um dos gêneros artísticos",
+      //   description:
+      //     "Fazer um desenho entre uma das opções: histórico, de gênero (cotidiano), retrato, paisagem, natureza-morta, abstração ou nu artístico",
+      //   points: "?",
+      //   status: "pending",
+      // },
     ],
   },
   {
@@ -192,7 +192,7 @@ export const subjectsData: Subject[] = [
     assessments: [
       {
         type: "trabalho",
-        date: "06/04 - 10/04",
+        date: "06/04 ou 10/04",
         title: "Teste sobre tipos de sujeito",
         description:
           "Questões avaliativas sobre os diversos tipos de sujeito (simples, composto, oculto, inexistente, etc.)",
