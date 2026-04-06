@@ -192,11 +192,20 @@ export const subjectsData: Subject[] = [
     assessments: [
       {
         type: "trabalho",
-        date: "06/04",
+        date: "10/04",
         title: "Teste sobre tipos de sujeito",
         description:
           "Questões avaliativas sobre os diversos tipos de sujeito (simples, composto, oculto, inexistente, etc.)",
-        points: "?",
+        points: "2",
+        status: "pending",
+      },
+      {
+        type: "trabalho",
+        date: "30/04",
+        title: "Trabalho Interdisciplinar (PDF)",
+        description:
+          "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
+        points: "2",
         status: "pending",
       },
     ],
@@ -251,7 +260,17 @@ export const subjectsData: Subject[] = [
     icon: <PenLine className="w-5 h-5" />,
     color: "from-indigo-500 to-violet-600",
     trimester: 1,
-    assessments: [],
+    assessments: [
+      {
+        type: "prova",
+        date: "30/04",
+        title: "Trabalho Interdisciplinar (PDF)",
+        description:
+          "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
+        points: "5",
+        status: "pending",
+      },
+    ],
   },
   {
     name: "Res. de Prob.",
@@ -323,7 +342,7 @@ export const getAssessmentsTypes = () => {
   return subjectsData
     .flatMap((subject) => subject.assessments)
     .map((assessment) => assessment.type);
-}
+};
 export const getTotalPending = () => {
   return subjectsData.reduce((total, subject) => {
     // Filtra apenas as avaliações pendentes e soma ao total

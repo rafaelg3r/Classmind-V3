@@ -73,8 +73,8 @@ export function DashboardHeader() {
           {greeting}, estudante!
         </h1>
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card/20 backdrop-blur-sm">
-          <span className="text-xs font-medium text-blue-200">
-            Última atualização: 31/03 às 23:50
+          <span className="text-xs font-semibold text-blue-200">
+            Última atualização: 06/04 às 17:40
           </span>
         </div>
       </motion.div>
