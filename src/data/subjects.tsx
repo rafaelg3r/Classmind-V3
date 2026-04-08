@@ -49,6 +49,23 @@ export const subjectsData: Subject[] = [
         points: "2",
         status: "done",
       },
+      {
+        type: "trabalho",
+        date: "09/04",
+        title: "Teste Geometria Espacial",
+        description: "Questões focas em cubos e paralelepipedos, volume, area total, area da base, area lateral...",
+        points: "2",
+        status: "pending",
+      },
+      {
+        type: "prova",
+        date: "29/04 ",
+        title: "Simulado CNT e Matemática",
+        description:
+          "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
+        points: "5",
+        status: "pending",
+      },
     ],
   },
   {
@@ -67,6 +84,15 @@ export const subjectsData: Subject[] = [
         points: "1",
         status: "done",
       },
+      {
+        type: "prova",
+        date: "29/04 ",
+        title: "Simulado CNT e Matemática",
+        description:
+          "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
+        points: "5",
+        status: "pending",
+      },
     ],
   },
   {
@@ -78,11 +104,20 @@ export const subjectsData: Subject[] = [
     assessments: [
       {
         type: "trabalho",
-        date: "08/04??",
-        title: "Teste (todo conteúdo passado)",
+        date: "indefinido",
+        title: "Teste de eletroestatica",
         description:
-          "Teste avaliativo com todos os conteúdos passados até o momento (foco em fórmulas).",
+          "Teste sobre forças elétricas e campo elétrico.",
         points: "2",
+        status: "pending",
+      },
+      {
+        type: "prova",
+        date: "29/04 ",
+        title: "Simulado CNT e Matemática",
+        description:
+          "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
+        points: "5",
         status: "pending",
       },
     ],
@@ -111,6 +146,24 @@ export const subjectsData: Subject[] = [
           "Pesquisar história, subdivisões, aplicações, importância e diferença entre Orgânica e Inorgânica",
         points: "1",
         status: "done",
+      },
+      {
+        type: "prova",
+        date: "29/04 ",
+        title: "Simulado CNT e Matemática",
+        description:
+          "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
+        points: "5",
+        status: "pending",
+      },
+      {
+        type: "trabalho",
+        date: "22/04 ",
+        title: "Teste sobre Hidrocarbonetos",
+        description:
+          "Teste sobre os hidrocarbonetos, suas classificações e suas nomenclaturas",
+        points: "2",
+        status: "pending",
       },
     ],
   },
