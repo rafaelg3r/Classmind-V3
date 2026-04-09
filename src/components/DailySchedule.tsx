@@ -1,6 +1,7 @@
-import { Clock, ArrowLeft } from "lucide-react";
+import { Clock, ArrowLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { subjectsData } from "../data/subjects";
+import { Link } from "react-router-dom";
 interface DailyScheduleProps {
   selectedDay: number;
   selectedDate: Date;
@@ -109,12 +110,33 @@ const DailySchedule = ({ selectedDay, selectedDate }: DailyScheduleProps) => {
               <span className="text-sm font-bold text-secondary min-w-[45px]">
                 {item.time}
               </span>
-              <span className="text-sm font-medium text-primary-foreground/90">
+              <span className="text-sm font-medium text-primary-foreground/90 flex-1 truncate min-w-0">
                 {(selectedDay === 0 && !semanaSeguinte) ||
                 (selectedDay === 6 && !semanaSeguinte)
                   ? "indefinido"
                   : item.subject}
               </span>
+              <div className="flex gap-1">
+                {assessments.map((a, idx) => (
+                  <span
+                    key={idx}
+                    className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                      a.type === "prova"
+                        ? "bg-rose-500/30 text-rose-300"
+                        : a.type === "teste"
+                          ? "bg-yellow-500/30 text-yellow-300"
+                          : "bg-blue-500/30 text-blue-300"
+                    }`}
+                  >
+                    {a.type}
+                  </span>
+                ))}
+              </div>
+              {pendingAssessments && (
+                <Link to="/avaliacoes" className="flex p-0.5 rounded-sm border border-yellow-400/40">
+                <ChevronRight className="w-5 h-5 text-primary-foreground" />
+              </Link>
+              )}
             </motion.div>
           );
         })}

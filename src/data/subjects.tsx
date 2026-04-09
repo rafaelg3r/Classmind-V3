@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export interface Assessment {
-  type: "trabalho" | "tema" | "prova";
+  type: "trabalho" | "prova" | "teste";
   date: string;
   title: string;
   description: string;
@@ -42,7 +42,7 @@ export const subjectsData: Subject[] = [
     trimester: 1,
     assessments: [
       {
-        type: "trabalho",
+        type: "teste",
         date: "13/03",
         title: "Teste Geometria Plana",
         description: "Questões de geometria plana com foco nas Áreas",
@@ -50,10 +50,11 @@ export const subjectsData: Subject[] = [
         status: "done",
       },
       {
-        type: "trabalho",
+        type: "teste",
         date: "09/04",
         title: "Teste Geometria Espacial",
-        description: "Questões focas em cubos e paralelepipedos, volume, area total, area da base, area lateral...",
+        description:
+          "Questões focas em cubos e paralelepipedos, volume, area total, area da base, area lateral...",
         points: "2",
         status: "pending",
       },
@@ -103,11 +104,10 @@ export const subjectsData: Subject[] = [
     trimester: 1,
     assessments: [
       {
-        type: "trabalho",
+        type: "teste",
         date: "indefinido",
         title: "Teste de eletroestatica",
-        description:
-          "Teste sobre forças elétricas e campo elétrico.",
+        description: "Teste sobre forças elétricas e campo elétrico.",
         points: "2",
         status: "pending",
       },
@@ -157,7 +157,7 @@ export const subjectsData: Subject[] = [
         status: "pending",
       },
       {
-        type: "trabalho",
+        type: "teste",
         date: "22/04 ",
         title: "Teste sobre Hidrocarbonetos",
         description:
@@ -244,7 +244,7 @@ export const subjectsData: Subject[] = [
     trimester: 1,
     assessments: [
       {
-        type: "trabalho",
+        type: "teste",
         date: "10/04",
         title: "Teste sobre tipos de sujeito",
         description:

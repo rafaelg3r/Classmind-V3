@@ -121,72 +121,98 @@ export default function Avaliacoes() {
                           <p className="text-xs mt-1">Tudo em dia! 🎉</p>
                         </div>
                       ) : (
-                        subject.assessments.map((assessment, idx) => (
-                          <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: idx * 0.05 }}
-                            className={`rounded-[8px]  p-4 text-primary-foreground ${
-                              assessment.status === "done"
-                                ? "bg-emerald-900/80"
-                                : assessment.type === "prova"
-                                  ? "bg-[#3b090a]"
-                                  : "card-dark"
-                            }`}
-                          >
-                            <div className="flex items-start justify-between mb-2">
-                              <div className="flex-1 min-w-0 ">
-                                <p
-                                  className={`font-bold text-sm ${assessment.type === "prova" ? "text-[#eb424d]" : "text-white"}`}
-                                >
-                                  {assessment.title}
-                                </p>
-                                <p className="text-xs text-primary-foreground/60 mt-0.5">
-                                  {assessment.description}
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className={`flex items-center justify-between mt-3 `}
+                        subject.assessments
+                          .slice()
+                          .sort((a, b) => {
+                            const priority: Record<string, number> = {
+                              prova: 0,
+                              teste: 1,
+                              trabalho: 2,
+                            };
+
+                            const statusOrder = (status: string) =>
+                              status === "done" ? 1 : 0;
+
+                            // Primeiro ordena por status
+                            const statusDiff =
+                              statusOrder(a.status) - statusOrder(b.status);
+                            if (statusDiff !== 0) return statusDiff;
+
+                            // Depois ordena por tipo
+                            return (
+                              (priority[a.type] ?? 99) -
+                              (priority[b.type] ?? 99)
+                            );
+                          })
+                          .map((assessment, idx) => (
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, y: 8 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.05 }}
+                              style={{}}
+                              className={`rounded-[8px]  p-4 text-primary-foreground  ${
+                                assessment.status === "done"
+                                  ? "bg-emerald-900/80 "
+                                  : assessment.type === "prova"
+                                    ? "bg-[#3b090a] "
+                                    : assessment.type === "teste"
+                                      ? "bg-[#775c10]"
+                                      : "card-dark"
+                              } `}
                             >
-                              <div className="flex items-center gap-1.5">
-                                <Calendar className="w-3.5 h-3.5 text-primary-foreground/50" />
-                                <span className="text-xs text-primary-foreground/70 font-medium">
-                                  {assessment.date}
-                                </span>
+                              <div className="flex items-start justify-between mb-2">
+                                <div className="flex-1 min-w-0 ">
+                                  <p
+                                    className={`font-bold text-sm ${assessment.type === "prova" ? "text-[#eb424d]" : assessment.type === "teste" ? "text-[#ffcf0e]" : "text-white"}`}
+                                  >
+                                    {assessment.title}
+                                  </p>
+                                  <p className="text-xs text-primary-foreground/60 mt-0.5">
+                                    {assessment.description}
+                                  </p>
+                                </div>
                               </div>
                               <div
-                                className={`flex items-center gap-1 shrink-0 ml-3 rounded-lg px-2.5 py-1.5 ${assessment.status === "done" ? "bg-emerald-900/90" : "bg-white/10 "} `}
+                                className={`flex items-center justify-between mt-3 `}
                               >
-                                <Trophy
-                                  className={`w-3.5 h-3.5 text-secondary ${assessment.status === "done" ? "text-emerald-300" : "text-secondary"}`}
-                                />
-                                <span className="text-sm font-extrabold ">
-                                  {assessment.points} pts
-                                </span>
+                                <div className="flex items-center gap-1.5">
+                                  <Calendar className="w-3.5 h-3.5 text-primary-foreground/50" />
+                                  <span className="text-xs text-primary-foreground/70 font-medium">
+                                    {assessment.date}
+                                  </span>
+                                </div>
+                                <div
+                                  className={`flex items-center gap-1 shrink-0 ml-3 rounded-lg px-2.5 py-1.5 ${assessment.status === "done" ? "bg-emerald-900/90" : "bg-white/10 "} `}
+                                >
+                                  <Trophy
+                                    className={`w-3.5 h-3.5 text-secondary ${assessment.status === "done" ? "text-emerald-300" : "text-secondary"}`}
+                                  />
+                                  <span className="text-sm font-extrabold ">
+                                    {assessment.points} pts
+                                  </span>
+                                </div>
                               </div>
-                            </div>
-                            <div className="mt-3">
-                              {assessment.status === "done" && (
-                                <div className="rounded-full py-1.5 px-2.5 bg-emerald-900/90 flex items-center justify-center gap-4 ">
-                                  <p className="text-xs font-medium text-emerald-200">
-                                    Finalizado
-                                  </p>
-                                  <Check className="w-5 h-5 text-emerald-300" />
-                                </div>
-                              )}
-                              {assessment.status === "pending" && (
-                                <div className="rounded-full py-1.5 px-2.5 bg-gray-100/10 flex items-center justify-center gap-4">
-                                  <p className="text-xs font-medium">
-                                    Pendente
-                                  </p>
-                                  <Clock className="w-5 h-5 text-secondary" />
-                                </div>
-                              )}
-                            </div>
-                          </motion.div>
-                        ))
+                              <div className="mt-3">
+                                {assessment.status === "done" && (
+                                  <div className="rounded-full py-1.5 px-2.5 bg-emerald-900/90 flex items-center justify-center gap-4 ">
+                                    <p className="text-xs font-medium text-emerald-200">
+                                      Finalizado
+                                    </p>
+                                    <Check className="w-5 h-5 text-emerald-300" />
+                                  </div>
+                                )}
+                                {assessment.status === "pending" && (
+                                  <div className="rounded-full py-1.5 px-2.5 bg-gray-100/10 flex items-center justify-center gap-4">
+                                    <p className="text-xs font-medium">
+                                      Pendente
+                                    </p>
+                                    <Clock className="w-5 h-5 text-secondary" />
+                                  </div>
+                                )}
+                              </div>
+                            </motion.div>
+                          ))
                       )}
                     </div>
                   </motion.div>
