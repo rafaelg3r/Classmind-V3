@@ -19,7 +19,7 @@ const days = [
 
 const fullWeek: Record<number, string[]> = {
   1: ["Geografia", "Biologia", "Biologia", "Ed. Física", "Ed. Física"],
-  2: ["História", "Sociologia", "Sociologia", "Res. Problemas", "Res. Problemas"],
+  2: ["História", "Português", "Português", "Res. Problemas", "Res. Problemas"],
   3: [
     "Parada Pedagógica",
     "Parada Pedagógica",
