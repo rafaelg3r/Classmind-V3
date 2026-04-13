@@ -50,11 +50,11 @@ export function NotificationModal() {
               Notificações
             </h2>
             <div className="flex flex-col gap-3">
-              {/* <div className="p-4 bg-indigo-200 rounded-lg "> */}
-                <span className="text-gray-700 text-sm font-medium leading-none">
-                  Nenhuma nova notificação.
+              <div className="p-4 bg-indigo-800 rounded-lg ">
+                <span className="text-white text-sm font-medium leading-none">
+                  <span className="text-orange-500">CORREÇÃO:</span> Teste de português QUINTA (não terça) nos periodos 4 e 5
                 </span>
-              {/* </div> */}
+              </div>
             </div>
           </motion.div>
         </div>

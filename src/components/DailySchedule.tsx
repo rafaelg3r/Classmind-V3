@@ -19,7 +19,13 @@ const days = [
 
 const fullWeek: Record<number, string[]> = {
   1: ["Geografia", "Biologia", "Biologia", "Ed. Física", "Ed. Física"],
-  2: ["História", "Português", "Português", "Res. Problemas", "Res. Problemas"],
+  2: [
+    "História",
+    "Sociologia",
+    "Sociologia",
+    "Res. Problemas",
+    "Res. Problemas",
+  ],
   3: [
     "Parada Pedagógica",
     "Parada Pedagógica",
@@ -37,7 +43,7 @@ const fullWeek: Record<number, string[]> = {
     // "Química",
     // "Química",
   ],
-  4: ["Biologia", "Matemática", "Literatura", "Artes", "Artes"],
+  4: ["Biologia", "Matemática", "Literatura", "Português", "Português"],
   5: ["Geografia", "Literatura", "Português", "Matemática", "Matemática"],
 };
 let semanaSeguinte = true;
@@ -138,9 +144,12 @@ const DailySchedule = ({ selectedDay, selectedDate }: DailyScheduleProps) => {
                 ))}
               </div>
               {pendingAssessments && (
-                <Link to="/avaliacoes" className="flex p-0.5 rounded-sm border border-yellow-400/40">
-                <ChevronRight className="w-5 h-5 text-primary-foreground" />
-              </Link>
+                <Link
+                  to="/avaliacoes"
+                  className="flex p-0.5 rounded-sm border border-yellow-400/40"
+                >
+                  <ChevronRight className="w-5 h-5 text-primary-foreground" />
+                </Link>
               )}
             </motion.div>
           );
