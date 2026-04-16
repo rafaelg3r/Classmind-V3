@@ -51,9 +51,12 @@ export function NotificationModal() {
             </h2>
             <div className="flex flex-col gap-3">
               <div className="p-4 bg-indigo-800 rounded-lg ">
-                <span className="text-white text-sm font-medium leading-none">
+                <span className="text-gray-400 text-sm font-medium leading-none">
+                  Nenhuma notificação
+                  </span>
+                {/* <span className="text-white text-sm font-medium leading-none">
                   <span className="text-orange-500">CORREÇÃO:</span> Teste de português QUINTA (não terça) nos periodos 4 e 5
-                </span>
+                </span> */}
               </div>
             </div>
           </motion.div>

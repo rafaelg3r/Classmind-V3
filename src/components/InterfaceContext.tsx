@@ -11,7 +11,7 @@ const InterfaceContext = createContext<InterfaceContextType | undefined>(
 );
 
 export function InterfaceProvider({ children }: { children: ReactNode }) {
-  const [isNotifyOpen, setIsNotifyOpen] = useState(true);
+  const [isNotifyOpen, setIsNotifyOpen] = useState(false);
 
   const toggleNotify = () => setIsNotifyOpen((prev) => !prev);
 

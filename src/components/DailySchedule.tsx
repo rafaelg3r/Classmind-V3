@@ -43,7 +43,7 @@ const fullWeek: Record<number, string[]> = {
     // "Química",
     // "Química",
   ],
-  4: ["Biologia", "Matemática", "Literatura", "Português", "Português"],
+  4: ["Biologia", "Biologia", "Literatura", "Português", "Português"],
   5: ["Geografia", "Literatura", "Português", "Matemática", "Matemática"],
 };
 let semanaSeguinte = true;
@@ -103,9 +103,28 @@ const DailySchedule = ({ selectedDay, selectedDate }: DailyScheduleProps) => {
             item.subject,
             selectedDate,
           );
-          const pendingAssessments = assessments.some(
+          const pendingAssessments = assessments.find(
             (a) => a.status === "pending",
           );
+          const typeAssessments = assessments.map((a) =>
+            a.type === "prova"
+              ? "prova"
+              : a.type === "teste"
+                ? "teste"
+                : "trabalho",
+          );
+          const getPendingStyles = (type) => {
+            switch (type) {
+              case "prova":
+                return "bg-red-400/20 border border-red-400/40 text-red-400";
+              case "teste":
+                return "bg-yellow-500/30  border border-yellow-300/40 text-orange-400";
+              case "trabalho":
+                return "bg-blue-400/20 border border-blue-400/40 text-blue-400";
+              default:
+                return "bg-primary-foreground/10";
+            }
+          };
           return (
             <motion.div
               key={item.time}
@@ -114,7 +133,7 @@ const DailySchedule = ({ selectedDay, selectedDate }: DailyScheduleProps) => {
               transition={{ delay: 0.5 + i * 0.05 }}
               className={`flex items-center gap-3 px-3 py-2 rounded-[6px] backdrop-blur-sm transition-colors ${
                 pendingAssessments
-                  ? "bg-yellow-400/20 border border-yellow-400/40"
+                  ? getPendingStyles(pendingAssessments.type)
                   : "bg-primary-foreground/10"
               }`}
             >

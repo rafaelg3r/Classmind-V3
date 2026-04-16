@@ -297,6 +297,15 @@ export const subjectsData: Subject[] = [
         points: "3",
         status: "done",
       },
+      {
+        type: "prova",
+        date: "17/04",
+        title: "Prova trimestral de Geografia",
+        description:
+          "Prova (com consulta da apostila ou do caderno) sobre os textos 'etnia e modernidade e o resumo da apostila",
+        points: "5",
+        status: "pending",
+      },
     ],
   },
   {
