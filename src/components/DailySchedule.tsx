@@ -18,33 +18,22 @@ const days = [
 ];
 
 const fullWeek: Record<number, string[]> = {
-  1: ["Geografia", "Biologia", "Biologia", "Ed. Física", "Ed. Física"],
-  2: [
-    "História",
-    "Sociologia",
-    "Sociologia",
-    "Res. Problemas",
-    "Res. Problemas",
-  ],
+  1: ["Feriado", "Feriado", "Feriado", "Feriado", "Feriado"],
+  2: ["Feriado", "Feriado", "Feriado", "Feriado", "Feriado"],
   3: [
-    "Parada Pedagógica",
-    "Parada Pedagógica",
-    "Parada Pedagógica",
-    "Parada Pedagógica",
-    "Parada Pedagógica",
-
-    "Parada Pedagógica",
-    "Parada Pedagógica",
-    "Parada Pedagógica",
-    "Parada Pedagógica",
+    "Física",
+    "Física",
+    "História",
+    "Biologia",
+    "Biologia",
     //Contraturno (sempre igual)
-    // "Matemática",
-    // "Matemática",
-    // "Química",
-    // "Química",
+    "Matemática",
+    "Matemática",
+    "Química",
+    "Química",
   ],
-  4: ["Biologia", "Biologia", "Literatura", "Português", "Português"],
-  5: ["Geografia", "Literatura", "Português", "Matemática", "Matemática"],
+  4: ["Redação", "Matemática", "Literatura", "Inglês", "Inglês"],
+  5: ["Geografia", "Redação", "Redação", "Matemática", "Matemática"],
 };
 let semanaSeguinte = true;
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
