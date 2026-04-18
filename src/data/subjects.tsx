@@ -56,7 +56,7 @@ export const subjectsData: Subject[] = [
         description:
           "Questões focas em cubos e paralelepipedos, volume, area total, area da base, area lateral...",
         points: "2",
-        status: "pending",
+        status: "done",
       },
       {
         type: "prova",
@@ -86,11 +86,20 @@ export const subjectsData: Subject[] = [
         status: "done",
       },
       {
+        type: "trabalho",
+        date: "Abril",
+        title: "Atividade sobre Cromossomos",
+        description:
+          "Recortar e colar os cromossomos de mesma categoria em seus devidos grupos",
+        points: "1",
+        status: "done",
+      },
+      {
         type: "prova",
         date: "29/04 ",
         title: "Simulado CNT e Matemática",
         description:
-          "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
+          "Conteúdo: Terminologias genéticas | Dominância completa, incompleta e codominância | Alelos letais e múltiplos | probabilidade (regra Ou e E) | Quadro de Punnett | Heredograma.",
         points: "5",
         status: "pending",
       },
@@ -105,7 +114,7 @@ export const subjectsData: Subject[] = [
     assessments: [
       {
         type: "teste",
-        date: "indefinido",
+        date: "22/04",
         title: "Teste de eletroestatica",
         description: "Teste sobre forças elétricas e campo elétrico.",
         points: "2",
@@ -249,8 +258,8 @@ export const subjectsData: Subject[] = [
         title: "Teste sobre tipos de sujeito",
         description:
           "Questões avaliativas sobre os diversos tipos de sujeito (simples, composto, oculto, inexistente, etc.)",
-        points: "2",
-        status: "pending",
+        points: "3",
+        status: "done",
       },
       {
         type: "trabalho",
@@ -276,8 +285,8 @@ export const subjectsData: Subject[] = [
         title: "Video-resenha avaliativo",
         description:
           "Produzir uma video-resenha crítica sobre um autor do Pré-modernismo Brasileiro (mais informações no classroom)",
-        points: "2",
-        status: "pending",
+        points: "4",
+        status: "done",
       },
     ],
   },
@@ -304,7 +313,7 @@ export const subjectsData: Subject[] = [
         description:
           "Prova (com consulta da apostila ou do caderno) sobre os textos 'etnia e modernidade e o resumo da apostila",
         points: "5",
-        status: "pending",
+        status: "done",
       },
     ],
   },
@@ -355,7 +364,7 @@ export const subjectsData: Subject[] = [
         date: "fim de abril",
         title: "Trabalho do heterograma (Genética)",
         description:
-          "Criar um heterograma com uma doença e responder as 3 perguntas propostas",
+          "Apresentar para o professor um heterograma com uma doença e responder as 3 perguntas propostas",
         points: "2",
         status: "pending",
       },
@@ -366,7 +375,7 @@ export const subjectsData: Subject[] = [
         description:
           "Responder as questões da folha de exercícios com tematica dos Simpsons.",
         points: "1",
-        status: "pending",
+        status: "done",
       },
       {
         type: "trabalho",
@@ -375,7 +384,7 @@ export const subjectsData: Subject[] = [
         description:
           "Responder as questões de lógica/estatisticas da folha de exercícios.",
         points: "1",
-        status: "pending",
+        status: "done",
       },
       {
         type: "trabalho",
@@ -384,7 +393,7 @@ export const subjectsData: Subject[] = [
         description:
           "Responder as questões de genética da folha de exercícios.",
         points: "1",
-        status: "pending",
+        status: "done",
       },
     ],
   },
