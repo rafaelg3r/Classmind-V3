@@ -243,7 +243,17 @@ export const subjectsData: Subject[] = [
     icon: <Languages className="w-5 h-5" />,
     color: "from-cyan-500 to-teal-600",
     trimester: 1,
-    assessments: [],
+    assessments: [
+      {
+        type: "prova",
+        date: "23/04",
+        title: "Prova de Inglês",
+        description:
+          "Prova baseada nos conteúdos vistos ao decorrer de todas as aulas",
+        points: "5",
+        status: "done",
+      }
+    ],
   },
   {
     name: "Português",
