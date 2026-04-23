@@ -263,11 +263,20 @@ export const subjectsData: Subject[] = [
       },
       {
         type: "trabalho",
-        date: "30/04",
+        date: "27/04",
         title: "Trabalho Interdisciplinar (PDF)",
         description:
           "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
         points: "2",
+        status: "pending",
+      },
+      {
+        type: "prova",
+        date: "24/04",
+        title: "Avaliação Trimestral de Português",
+        description:
+          "Conteúdo: Frase, oração e período, Sujeito e tipos de sujeito",
+        points: "5",
         status: "pending",
       },
     ],
@@ -334,7 +343,7 @@ export const subjectsData: Subject[] = [
     assessments: [
       {
         type: "prova",
-        date: "30/04",
+        date: "27/04",
         title: "Trabalho Interdisciplinar (PDF)",
         description:
           "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
