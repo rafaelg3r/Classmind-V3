@@ -77,6 +77,15 @@ export const subjectsData: Subject[] = [
     trimester: 1,
     assessments: [
       {
+        type: "prova",
+        date: "29/04 ",
+        title: "Simulado CNT e Matemática",
+        description:
+          "Conteúdo: Terminologias genéticas | Dominância completa, incompleta e codominância | Alelos letais e múltiplos | probabilidade (regra Ou e E) | Quadro de Punnett | Heredograma.",
+        points: "5",
+        status: "pending",
+      },
+      {
         type: "trabalho",
         date: "05/03",
         title: "Atividade sobre Hereditariedade",
@@ -93,15 +102,6 @@ export const subjectsData: Subject[] = [
           "Recortar e colar os cromossomos de mesma categoria em seus devidos grupos",
         points: "1",
         status: "done",
-      },
-      {
-        type: "prova",
-        date: "29/04 ",
-        title: "Simulado CNT e Matemática",
-        description:
-          "Conteúdo: Terminologias genéticas | Dominância completa, incompleta e codominância | Alelos letais e múltiplos | probabilidade (regra Ou e E) | Quadro de Punnett | Heredograma.",
-        points: "5",
-        status: "pending",
       },
     ],
   },
@@ -158,7 +158,7 @@ export const subjectsData: Subject[] = [
       },
       {
         type: "prova",
-        date: "29/04 ",
+        date: "29/04",
         title: "Simulado CNT e Matemática",
         description:
           "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
@@ -252,7 +252,7 @@ export const subjectsData: Subject[] = [
           "Prova baseada nos conteúdos vistos ao decorrer de todas as aulas",
         points: "5",
         status: "done",
-      }
+      },
     ],
   },
   {
@@ -272,7 +272,7 @@ export const subjectsData: Subject[] = [
         status: "done",
       },
       {
-        type: "trabalho",
+        type: "teste",
         date: "27/04",
         title: "Trabalho Interdisciplinar (PDF)",
         description:
@@ -287,7 +287,7 @@ export const subjectsData: Subject[] = [
         description:
           "Conteúdo: Frase, oração e período, Sujeito e tipos de sujeito",
         points: "5",
-        status: "pending",
+        status: "done",
       },
     ],
   },

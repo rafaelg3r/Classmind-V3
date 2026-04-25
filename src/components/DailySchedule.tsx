@@ -95,13 +95,7 @@ const DailySchedule = ({ selectedDay, selectedDate }: DailyScheduleProps) => {
           const pendingAssessments = assessments.find(
             (a) => a.status === "pending",
           );
-          const typeAssessments = assessments.map((a) =>
-            a.type === "prova"
-              ? "prova"
-              : a.type === "teste"
-                ? "teste"
-                : "trabalho",
-          );
+  
           const getPendingStyles = (type) => {
             switch (type) {
               case "prova":

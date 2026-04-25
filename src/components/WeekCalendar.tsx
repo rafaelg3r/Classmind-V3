@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { getAssessmentsDates, getAssessmentsTypes } from "../data/subjects";
 interface WeekCalendarProps {
   selectedDay: number;
-  selectedDate: Date
+  selectedDate: Date;
   onSelectDay: (dayIndex: number) => void;
 }
 
@@ -14,10 +14,12 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
   const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
   const assessmentDates = getAssessmentsDates();
-  const assessmentTypes = getAssessmentsTypes();
   const getWeekDates = () => {
     const startOfWeek = new Date(today);
+    console.log(startOfWeek);
     startOfWeek.setDate(today.getDate() - dayOfWeek);
+    console.log(dayOfWeek);
+    console.log(startOfWeek);
     return weekDays.map((day, i) => {
       const date = new Date(startOfWeek);
       date.setDate(startOfWeek.getDate() + i);
@@ -30,7 +32,7 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
       };
     });
   };
-  // console.log(weekNumericDays);
+  console.log(today);
 
   const month = today.toLocaleDateString("pt-BR", {
     month: "long",
@@ -52,7 +54,7 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
       <div className="flex justify-between gap-1 sm:gap-3">
         {week.map(({ day, date, month: dayMonth, isToday, dayIndex }) => {
           const isSelected = selectedDay === dayIndex;
-          
+
           const hasAssessment = assessmentDates.some(
             (a) => a.day === date && a.month === dayMonth,
           );
@@ -69,7 +71,9 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
               }`}
             >
               {hasAssessment && (
-                 <span className={`absolute top-0 right-0 w-1.5 h-1.5 rounded-full bg-yellow-400`} />
+                <span
+                  className={`absolute top-0 right-0 w-1.5 h-1.5 rounded-full bg-yellow-400`}
+                />
               )}
               <span className="text-[10px] font-semibold uppercase">{day}</span>
               <span
@@ -79,7 +83,6 @@ const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
               >
                 {date}
               </span>
-              
             </div>
           );
         })}
