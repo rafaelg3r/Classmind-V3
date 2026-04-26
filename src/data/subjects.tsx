@@ -183,12 +183,12 @@ export const subjectsData: Subject[] = [
     color: "from-yellow-600 to-yellow-900",
     trimester: 1,
     assessments: [
-      {
+    {
         type: "prova",
         date: "30/04",
-        title: "Simulado CNT e Matemática",
+        title: "Prova de Artes",
         description:
-          "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
+          "Conteudos: linha do tempo, gêneros da pintura e arte",
         points: "5",
         status: "pending",
       },
@@ -354,9 +354,9 @@ export const subjectsData: Subject[] = [
       {
         type: "prova",
         date: "27/04",
-        title: "Prova de Artes",
+        title: "Trabalho Interdisciplinar (PDF)",
         description:
-          "Conteudos: linha do tempo, gêneros da pintura e arte abstrata",
+          "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
         points: "5",
         status: "pending",
       },
