@@ -18,7 +18,7 @@ const days = [
 ];
 
 const fullWeek: Record<number, string[]> = {
-  1: ["Res. Problema", "Português", "Português", "Ed. Física", "Ed. Física"],
+  1: ["Res. Problema", "Redação", "Redação", "Ed. Física", "Ed. Física"],
   2: ["Historia", "Sociologia", "Sociologia", "Res. Problema", "Res. Problema"],
   3: [
     "Física",
@@ -32,7 +32,7 @@ const fullWeek: Record<number, string[]> = {
     "Química",
     "Química",
   ],
-  4: ["Português", "Matemática", "Literatura", "Artes", "Artes"],
+  4: ["Português", "Matemática", "Literatura", "Artes", "Artes",],
   5: ["Feriado", "Feriado", "Feriado", "Feriado", "Feriado"],
 };
 let semanaSeguinte = true;

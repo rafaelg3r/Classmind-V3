@@ -183,15 +183,15 @@ export const subjectsData: Subject[] = [
     color: "from-yellow-600 to-yellow-900",
     trimester: 1,
     assessments: [
-      // {
-      //   type: "trabalho",
-      //   date: "02/04",
-      //   title: "Desenho seguindo um dos gêneros artísticos",
-      //   description:
-      //     "Fazer um desenho entre uma das opções: histórico, de gênero (cotidiano), retrato, paisagem, natureza-morta, abstração ou nu artístico",
-      //   points: "?",
-      //   status: "pending",
-      // },
+      {
+        type: "prova",
+        date: "30/04",
+        title: "Simulado CNT e Matemática",
+        description:
+          "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
+        points: "5",
+        status: "pending",
+      },
     ],
   },
   {
@@ -273,7 +273,7 @@ export const subjectsData: Subject[] = [
       },
       {
         type: "teste",
-        date: "27/04",
+        date: "30/04",
         title: "Trabalho Interdisciplinar (PDF)",
         description:
           "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
@@ -354,9 +354,9 @@ export const subjectsData: Subject[] = [
       {
         type: "prova",
         date: "27/04",
-        title: "Trabalho Interdisciplinar (PDF)",
+        title: "Prova de Artes",
         description:
-          "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
+          "Conteudos: linha do tempo, gêneros da pintura e arte abstrata",
         points: "5",
         status: "pending",
       },
