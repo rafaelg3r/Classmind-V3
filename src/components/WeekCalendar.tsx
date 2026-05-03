@@ -1,19 +1,19 @@
 import { motion } from "framer-motion";
-import { getAssessmentsDates, getAssessmentsTypes } from "../data/subjects";
+import { getassessments1Dates, getassessments1Types } from "../data/subjects";
 interface WeekCalendarProps {
   selectedDay: number;
   selectedDate: Date;
   onSelectDay: (dayIndex: number) => void;
 }
 
-// console.log(getAssessmentsDates());
+// console.log(getassessments1Dates());
 const WeekCalendar = ({ selectedDay, onSelectDay }: WeekCalendarProps) => {
   const today = new Date();
   const dayOfWeek = today.getDay();
 
   const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
-  const assessmentDates = getAssessmentsDates();
+  const assessmentDates = getassessments1Dates();
   const getWeekDates = () => {
     const startOfWeek = new Date(today);
     console.log(startOfWeek);
