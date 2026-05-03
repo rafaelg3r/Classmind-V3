@@ -366,7 +366,7 @@ export const subjectsData: Subject[] = [
         description:
           "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
         points: "5",
-        status: "pending",
+        status: "done",
       },
     ],
   },
@@ -393,7 +393,7 @@ export const subjectsData: Subject[] = [
         description:
           "Apresentar para o professor um heterograma com uma doença e responder as 3 perguntas propostas",
         points: "2",
-        status: "pending",
+        status: "done",
       },
       {
         type: "trabalho",
