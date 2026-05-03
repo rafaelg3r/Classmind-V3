@@ -46,7 +46,7 @@ export const subjectsData: Subject[] = [
         type: "teste",
         date: "13/03",
         title: "Teste Geometria Plana",
-        description: "Questões de geometria plana com foco nas Áreas",
+        description: "Questões de geometria plana com foco em Áreas",
         points: "2",
         status: "done",
       },
