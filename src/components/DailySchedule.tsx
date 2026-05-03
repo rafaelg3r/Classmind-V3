@@ -18,35 +18,35 @@ const days = [
 ];
 
 const fullWeek: Record<number, string[]> = {
-  1: ["Res. Problema", "Redação", "Redação", "Ed. Física", "Ed. Física"],
-  2: ["Historia", "Sociologia", "Sociologia", "Res. Problema", "Res. Problema"],
+  1: ["Redação", "Redação", "Redação", "Ed. Física", "Ed. Física"],
+  2: ["Literatura", "Filosofia", "Filosofia", "Redação", "Redação"],
   3: [
     "Física",
     "Física",
     "História",
-    "Biologia",
-    "Biologia",
+    "Geografia",
+    "Geografia",
     //Contraturno (sempre igual)
     "Matemática",
     "Matemática",
     "Química",
     "Química",
   ],
-  4: ["Português", "Matemática", "Literatura", "Artes", "Artes",],
-  5: ["Feriado", "Feriado", "Feriado", "Feriado", "Feriado"],
+  4: ["Biologia", "Redação", "Redação", "Inglês", "Inglês"],
+  5: ["Geografia", "Português", "Português", "Matematica", "Matematica"],
 };
 let semanaSeguinte = true;
 const morningHours = ["07:30", "08:20", "09:10", "10:30", "11:00"];
 const eveningHours = ["13:30", "14:15", "15:20", "16:15"];
 
-const getAssessmentsForSubjectOnDate = (subjectName: string, date: Date) => {
+const getAssessments1ForSubjectOnDate = (subjectName: string, date: Date) => {
   const day = date.getDate();
   const month = date.getMonth() + 1;
 
   const subject = subjectsData.find((s) => s.name === subjectName);
   if (!subject) return [];
 
-  return subject.assessments.filter((a) => {
+  return subject.assessments1.filter((a) => {
     const parts = a.date.trim().split("/");
     const aDay = parseInt(parts[0], 10);
     const aMonth = parseInt(parts[1], 10);
@@ -88,14 +88,14 @@ const DailySchedule = ({ selectedDay, selectedDate }: DailyScheduleProps) => {
       ) : null}
       <div className="space-y-2">
         {scheduleItems.map((item, i) => {
-          const assessments = getAssessmentsForSubjectOnDate(
+          const assessments = getAssessments1ForSubjectOnDate(
             item.subject,
             selectedDate,
           );
           const pendingAssessments = assessments.find(
             (a) => a.status === "pending",
           );
-  
+
           const getPendingStyles = (type) => {
             switch (type) {
               case "prova":

@@ -29,8 +29,9 @@ export interface Subject {
   professor: string;
   icon: React.ReactNode;
   color: string;
-  trimester: 1 | 2 | 3;
-  assessments: Assessment[];
+  assessments1?: Assessment[];
+  assessments2?: Assessment[];
+  assessments3?: Assessment[];
 }
 
 export const subjectsData: Subject[] = [
@@ -39,8 +40,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Marcia",
     icon: <Calculator className="w-5 h-5" />,
     color: "from-violet-500 to-indigo-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "teste",
         date: "13/03",
@@ -65,7 +66,7 @@ export const subjectsData: Subject[] = [
         description:
           "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
         points: "5",
-        status: "pending",
+        status: "done",
       },
     ],
   },
@@ -74,8 +75,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Josiane",
     icon: <FlaskConical className="w-5 h-5" />,
     color: "from-emerald-500 to-teal-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "prova",
         date: "29/04 ",
@@ -83,7 +84,7 @@ export const subjectsData: Subject[] = [
         description:
           "Conteúdo: Terminologias genéticas | Dominância completa, incompleta e codominância | Alelos letais e múltiplos | probabilidade (regra Ou e E) | Quadro de Punnett | Heredograma.",
         points: "5",
-        status: "pending",
+        status: "done",
       },
       {
         type: "trabalho",
@@ -110,16 +111,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Lielei",
     icon: <Atom className="w-5 h-5" />,
     color: "from-sky-500 to-blue-600",
-    trimester: 1,
-    assessments: [
-      {
-        type: "teste",
-        date: "22/04",
-        title: "Teste de eletroestatica",
-        description: "Teste sobre forças elétricas e campo elétrico.",
-        points: "2",
-        status: "pending",
-      },
+    
+    assessments1: [
       {
         type: "prova",
         date: "29/04 ",
@@ -127,7 +120,7 @@ export const subjectsData: Subject[] = [
         description:
           "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
         points: "5",
-        status: "pending",
+        status: "done",
       },
     ],
   },
@@ -136,8 +129,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Suéli",
     icon: <Beaker className="w-5 h-5" />,
     color: "from-amber-500 to-orange-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "trabalho",
         date: "01/04 ",
@@ -163,7 +156,7 @@ export const subjectsData: Subject[] = [
         description:
           "Simulado com 50 questões abordando o conteúdo de Química, Física, Biologia e Matemática.",
         points: "5",
-        status: "pending",
+        status: "done",
       },
       {
         type: "teste",
@@ -172,7 +165,7 @@ export const subjectsData: Subject[] = [
         description:
           "Teste sobre os hidrocarbonetos, suas classificações e suas nomenclaturas",
         points: "2",
-        status: "pending",
+        status: "done",
       },
     ],
   },
@@ -181,16 +174,15 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Maria Luiza",
     icon: <Palette className="w-5 h-5" />,
     color: "from-yellow-600 to-yellow-900",
-    trimester: 1,
-    assessments: [
-    {
+    
+    assessments1: [
+      {
         type: "prova",
         date: "30/04",
         title: "Prova de Artes",
-        description:
-          "Conteudos: linha do tempo, gêneros da pintura e arte",
+        description: "Conteudos: linha do tempo, gêneros da pintura e arte",
         points: "5",
-        status: "pending",
+        status: "done",
       },
     ],
   },
@@ -199,8 +191,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Camilo",
     icon: <Lightbulb className="w-5 h-5" />,
     color: "from-yellow-300 to-yellow-500",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "trabalho",
         date: "24/03",
@@ -217,16 +209,16 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Camilo",
     icon: <Users className="w-5 h-5" />,
     color: "from-amber-200 to-amber-600",
-    trimester: 1,
-    assessments: [],
+    
+    assessments1: [],
   },
   {
     name: "Ed. Física",
     professor: "Prof. Luís Simão",
     icon: <Dumbbell className="w-5 h-5" />,
     color: "from-lime-500 to-green-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "trabalho",
         date: "04/03",
@@ -242,8 +234,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Matheus",
     icon: <Languages className="w-5 h-5" />,
     color: "from-cyan-500 to-teal-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "prova",
         date: "23/04",
@@ -260,8 +252,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Isis",
     icon: <BookText className="w-5 h-5" />,
     color: "from-fuchsia-500 to-purple-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "teste",
         date: "16/04",
@@ -278,7 +270,7 @@ export const subjectsData: Subject[] = [
         description:
           "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
         points: "2",
-        status: "pending",
+        status: "done",
       },
       {
         type: "prova",
@@ -296,8 +288,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Claudia",
     icon: <BookOpen className="w-5 h-5" />,
     color: "from-rose-500 to-pink-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "trabalho",
         date: "17/04",
@@ -307,6 +299,15 @@ export const subjectsData: Subject[] = [
         points: "4",
         status: "done",
       },
+      {
+        type: "prova",
+        date: "30/04",
+        title: "Prova Trimestral",
+        description:
+          "Vanguardas e umas parada muito louca la",
+        points: "5",
+        status: "done",
+      },
     ],
   },
   {
@@ -314,8 +315,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Luís Girardon",
     icon: <Globe className="w-5 h-5" />,
     color: "from-teal-500 to-emerald-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "trabalho",
         date: "13/03",
@@ -334,6 +335,15 @@ export const subjectsData: Subject[] = [
         points: "5",
         status: "done",
       },
+      {
+        type: "trabalho",
+        date: "22/04",
+        title: "Revisão dos Cadernos",
+        description:
+          "Revisão dos conteúdos que ele passou para copiar e fazer",
+        points: "2",
+        status: "done",
+      }
     ],
   },
   {
@@ -341,16 +351,16 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Ariane",
     icon: <Landmark className="w-5 h-5" />,
     color: "from-yellow-500 to-amber-600",
-    trimester: 1,
-    assessments: [],
+    
+    assessments1: [],
   },
   {
     name: "Redação",
     professor: "Prof. Isis",
     icon: <PenLine className="w-5 h-5" />,
     color: "from-indigo-500 to-violet-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "prova",
         date: "27/04",
@@ -367,8 +377,8 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Marcos",
     icon: <Calculator className="w-5 h-5" />,
     color: "from-orange-500 to-red-600",
-    trimester: 1,
-    assessments: [
+    
+    assessments1: [
       {
         type: "prova",
         date: "fim de abril",
@@ -417,9 +427,9 @@ export const subjectsData: Subject[] = [
     ],
   },
 ];
-export const getAssessmentsDates = () => {
+export const getassessments1Dates = () => {
   return subjectsData
-    .flatMap((subject) => subject.assessments)
+    .flatMap((subject) => subject.assessments1)
     .map((assessment) => {
       const parts = assessment.date.trim().split("/");
       const day = parseInt(parts[0], 10);
@@ -428,15 +438,15 @@ export const getAssessmentsDates = () => {
     })
     .filter((d) => !isNaN(d.day) && !isNaN(d.month)); // filtra datas tipo "fim de abril"
 };
-export const getAssessmentsTypes = () => {
+export const getassessments1Types = () => {
   return subjectsData
-    .flatMap((subject) => subject.assessments)
+    .flatMap((subject) => subject.assessments1)
     .map((assessment) => assessment.type);
 };
 export const getTotalPending = () => {
   return subjectsData.reduce((total, subject) => {
     // Filtra apenas as avaliações pendentes e soma ao total
-    const pendingCount = subject.assessments.filter(
+    const pendingCount = subject.assessments1.filter(
       (assessment) => assessment.status === "pending",
     ).length;
 
