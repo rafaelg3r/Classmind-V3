@@ -55,8 +55,8 @@ export default function Avaliacoes() {
 
         {subjectsData.map((subject) => {
           const isExpanded = expandedSubject === subject.name;
-          const assessmentCount = subject.assessments.length;
-          const pendingAssessmentsCount = subject.assessments.filter(
+          const assessmentCount = subject.assessments1.length;
+          const pendingAssessmentsCount = subject.assessments1.filter(
             (assessment) => assessment.status !== "done",
           ).length;
 
@@ -121,7 +121,7 @@ export default function Avaliacoes() {
                           <p className="text-xs mt-1">Tudo em dia! 🎉</p>
                         </div>
                       ) : (
-                        subject.assessments
+                        subject.assessments1
                           .slice()
                           .sort((a, b) => {
                             const priority: Record<string, number> = {
