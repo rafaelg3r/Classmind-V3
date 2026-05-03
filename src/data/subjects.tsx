@@ -40,7 +40,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Marcia",
     icon: <Calculator className="w-5 h-5" />,
     color: "from-violet-500 to-indigo-600",
-    
+
     assessments1: [
       {
         type: "teste",
@@ -75,7 +75,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Josiane",
     icon: <FlaskConical className="w-5 h-5" />,
     color: "from-emerald-500 to-teal-600",
-    
+
     assessments1: [
       {
         type: "prova",
@@ -111,7 +111,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Lielei",
     icon: <Atom className="w-5 h-5" />,
     color: "from-sky-500 to-blue-600",
-    
+
     assessments1: [
       {
         type: "prova",
@@ -129,7 +129,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Suéli",
     icon: <Beaker className="w-5 h-5" />,
     color: "from-amber-500 to-orange-600",
-    
+
     assessments1: [
       {
         type: "trabalho",
@@ -174,7 +174,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Maria Luiza",
     icon: <Palette className="w-5 h-5" />,
     color: "from-yellow-600 to-yellow-900",
-    
+
     assessments1: [
       {
         type: "prova",
@@ -191,7 +191,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Camilo",
     icon: <Lightbulb className="w-5 h-5" />,
     color: "from-yellow-300 to-yellow-500",
-    
+
     assessments1: [
       {
         type: "trabalho",
@@ -209,7 +209,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Camilo",
     icon: <Users className="w-5 h-5" />,
     color: "from-amber-200 to-amber-600",
-    
+
     assessments1: [],
   },
   {
@@ -217,7 +217,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Luís Simão",
     icon: <Dumbbell className="w-5 h-5" />,
     color: "from-lime-500 to-green-600",
-    
+
     assessments1: [
       {
         type: "trabalho",
@@ -234,7 +234,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Matheus",
     icon: <Languages className="w-5 h-5" />,
     color: "from-cyan-500 to-teal-600",
-    
+
     assessments1: [
       {
         type: "prova",
@@ -252,7 +252,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Isis",
     icon: <BookText className="w-5 h-5" />,
     color: "from-fuchsia-500 to-purple-600",
-    
+
     assessments1: [
       {
         type: "teste",
@@ -288,7 +288,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Claudia",
     icon: <BookOpen className="w-5 h-5" />,
     color: "from-rose-500 to-pink-600",
-    
+
     assessments1: [
       {
         type: "trabalho",
@@ -303,8 +303,7 @@ export const subjectsData: Subject[] = [
         type: "prova",
         date: "30/04",
         title: "Prova Trimestral",
-        description:
-          "Vanguardas e umas parada muito louca la",
+        description: "Vanguardas e umas parada muito louca la",
         points: "5",
         status: "done",
       },
@@ -315,7 +314,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Luís Girardon",
     icon: <Globe className="w-5 h-5" />,
     color: "from-teal-500 to-emerald-600",
-    
+
     assessments1: [
       {
         type: "trabalho",
@@ -339,11 +338,10 @@ export const subjectsData: Subject[] = [
         type: "trabalho",
         date: "22/04",
         title: "Revisão dos Cadernos",
-        description:
-          "Revisão dos conteúdos que ele passou para copiar e fazer",
+        description: "Revisão dos conteúdos que ele passou para copiar e fazer",
         points: "2",
         status: "done",
-      }
+      },
     ],
   },
   {
@@ -351,7 +349,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Ariane",
     icon: <Landmark className="w-5 h-5" />,
     color: "from-yellow-500 to-amber-600",
-    
+
     assessments1: [],
   },
   {
@@ -359,7 +357,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Isis",
     icon: <PenLine className="w-5 h-5" />,
     color: "from-indigo-500 to-violet-600",
-    
+
     assessments1: [
       {
         type: "prova",
@@ -377,7 +375,7 @@ export const subjectsData: Subject[] = [
     professor: "Prof. Marcos",
     icon: <Calculator className="w-5 h-5" />,
     color: "from-orange-500 to-red-600",
-    
+
     assessments1: [
       {
         type: "prova",
