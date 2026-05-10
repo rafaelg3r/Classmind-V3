@@ -43,6 +43,14 @@ export const subjectsData: Subject[] = [
 
     assessments1: [
       {
+        type: "trabalho",
+        date: "06/05",
+        title: "Exercícios de Piramides",
+        description: "Atividades sobre pirâmides.",
+        points: "1",
+        status: "done",
+      },
+      {
         type: "teste",
         date: "13/03",
         title: "Teste Geometria Plana",
@@ -97,11 +105,29 @@ export const subjectsData: Subject[] = [
       },
       {
         type: "trabalho",
-        date: "Abril",
+        date: "30/03",
         title: "Atividade sobre Cromossomos",
         description:
           "Recortar e colar os cromossomos de mesma categoria em seus devidos grupos",
         points: "1",
+        status: "done",
+      },
+      {
+        type: "trabalho",
+        date: "02/04",
+        title: "Tipagem Sanguínea",
+        description:
+          "Completar a folha de exercícios sobre os tipos sanguíneos dos seu grupo.",
+        points: "1",
+        status: "done",
+      },
+      {
+        type: "teste",
+        date: "13/04",
+        title: "Seminário sobre Genética e Biotecnologia",
+        description:
+          "Seminário com assuntos relevantes em genética e biotecnologia.",
+        points: "2",
         status: "done",
       },
     ],
@@ -113,6 +139,14 @@ export const subjectsData: Subject[] = [
     color: "from-sky-500 to-blue-600",
 
     assessments1: [
+      {
+        type: "prova",
+        date: "06/05",
+        title: "Caderno",
+        description: "Caderno valendo 5 pontos.",
+        points: "5",
+        status: "done",
+      },
       {
         type: "prova",
         date: "29/04 ",
@@ -183,6 +217,31 @@ export const subjectsData: Subject[] = [
         description: "Conteudos: linha do tempo, gêneros da pintura e arte",
         points: "5",
         status: "done",
+      },
+      
+      {
+        type: "trabalho",
+        date: "14/05",
+        title: "Arte abstrata",
+        description: "criar um desenho abstrato usando formas e cores",
+        points: "1",
+        status: "pending",
+      },
+      {
+        type: "trabalho",
+        date: "14/05",
+        title: "Expressões artísticas",
+        description: "Em grupo expressar o contemporaneo usando qualquer forma de arte (não digital)",
+        points: "3",
+        status: "pending",
+      },
+      {
+        type: "trabalho",
+        date: "14/05",
+        title: "Pintura de gênero",
+        description: "Criar uma pintura de gênero.",
+        points: "1",
+        status: "pending",
       },
     ],
   },
@@ -365,6 +424,15 @@ export const subjectsData: Subject[] = [
         title: "Trabalho Interdisciplinar (PDF)",
         description:
           "Explicação do eixo, organizar 8 possiveis temas, pesquisar 6 repertorios, escolher 6 argumentos, escolher repertorios para os argumentos, criar um mapa mental sobre o eixo (no canva).",
+        points: "5",
+        status: "done",
+      },
+      {
+        type: "prova",
+        date: "30/04",
+        title: "Prova Trimestral de Redação",
+        description:
+          "Prova de redação metade questoes e metade criação de uma introdução e desenvolvimento 1.",
         points: "5",
         status: "done",
       },
