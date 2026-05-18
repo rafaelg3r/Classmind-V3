@@ -218,22 +218,23 @@ export const subjectsData: Subject[] = [
         points: "5",
         status: "done",
       },
-      
+
       {
         type: "trabalho",
         date: "14/05",
         title: "Arte abstrata",
         description: "criar um desenho abstrato usando formas e cores",
         points: "1",
-        status: "pending",
+        status: "done",
       },
       {
         type: "trabalho",
         date: "14/05",
         title: "Expressões artísticas",
-        description: "Em grupo expressar o contemporaneo usando qualquer forma de arte (não digital)",
+        description:
+          "Em grupo expressar o contemporaneo usando qualquer forma de arte (não digital)",
         points: "3",
-        status: "pending",
+        status: "done",
       },
       {
         type: "trabalho",
@@ -241,7 +242,7 @@ export const subjectsData: Subject[] = [
         title: "Pintura de gênero",
         description: "Criar uma pintura de gênero.",
         points: "1",
-        status: "pending",
+        status: "done",
       },
     ],
   },
