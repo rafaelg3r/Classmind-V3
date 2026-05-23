@@ -254,12 +254,20 @@ export const subjectsData: Subject[] = [
 
     assessments1: [
       {
-        type: "trabalho",
+        type: "prova",
         date: "24/03",
         title: "Apresentação dos Mitos",
         description:
           "(Copiar no caderno) Apresentar e contar a história do mito escolhido.",
-        points: "2",
+        points: "5",
+        status: "done",
+      },
+      {
+        type: "prova",
+        date: "indefinido",
+        title: "Prova trimestal",
+        description: "Prova com os conteúdos abordados no trimestre.",
+        points: "5",
         status: "done",
       },
     ],
@@ -270,7 +278,24 @@ export const subjectsData: Subject[] = [
     icon: <Users className="w-5 h-5" />,
     color: "from-amber-200 to-amber-600",
 
-    assessments1: [],
+    assessments1: [
+      {
+        type: "prova",
+        date: "indefinido",
+        title: "Avaliação 01",
+        description: "Avaliação 1.",
+        points: "5",
+        status: "done",
+      },
+      {
+        type: "prova",
+        date: "indefinido",
+        title: "Prova trimestral",
+        description: "Prova com os conteúdos abordados no trimestre.",
+        points: "5",
+        status: "done",
+      },
+    ],
   },
   {
     name: "Ed. Física",
@@ -453,7 +478,7 @@ export const subjectsData: Subject[] = [
         description:
           "Pesquisa contendo: Introdução, Objetivo, Metodologia/Desenvolvimento e Resultados (formulário ou outro).",
         points: "5",
-        status: "pending",
+        status: "done",
       },
       {
         type: "trabalho",
