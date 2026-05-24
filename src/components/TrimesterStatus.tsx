@@ -1,18 +1,18 @@
-import { Clock, Lock } from "lucide-react";
+import { Clock, Lock, Verified } from "lucide-react";
 import { motion } from "framer-motion";
 
 const trimesters = [
   {
     label: "1º Trimestre",
-    status: "Em andamento",
-    icon: Clock,
-    variant: "active" as const,
+    status: "Concluído",
+    icon: Verified,
+    variant: "done" as const,
   },
   {
     label: "2º Trimestre",
-    status: "Não iniciado",
-    icon: Lock,
-    variant: "locked" as const,
+    status: "Em andamento",
+    icon: Clock,
+    variant: "active" as const,
   },
   {
     label: "3º Trimestre",
@@ -58,9 +58,9 @@ export default function TrimesterStatus() {
                 i === 0 ? "col-span-2" : ""
               }`}
             >
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex items-center gap-2 mb-1 ">
                 <Icon className={`w-4 h-4 ${statusColors[t.variant]}`} />
-                <span className="text-sm font-bold text-foreground">
+                <span className={`text-sm font-bold text-foreground ${statusColors[t.variant]}`}>
                   {t.label}
                 </span>
               </div>
