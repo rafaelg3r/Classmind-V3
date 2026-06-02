@@ -29,8 +29,8 @@ const fullWeek: Record<number, string[]> = {
     //Contraturno (sempre igual)
     "Matemática",
     "Matemática",
-    "Química",
-    "Química",
+    "Física",
+    "Física",
   ],
   4: ["Feriado", "Feriado", "Feriado", "Feriado", "Feriado"],
   5: ["Feriado", "Feriado", "Feriado", "Feriado", "Feriado"],
